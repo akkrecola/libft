@@ -6,7 +6,7 @@
 #    By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 15:27:40 by elehtora          #+#    #+#              #
-#    Updated: 2021/11/03 17:17:30 by elehtora         ###   ########.fr        #
+#    Updated: 2021/11/03 19:32:55 by elehtora         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS = *.c
 
 OBJECTS = *.o
 
-all : $(NAME)
+all : $(NAME) clean
 
 $(NAME) :
 	gcc -c -Wall -Wextra -Werror $(SRCS)
