@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:49:03 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/03 18:50:22 by elehtora         ###   ########.fr       */
+/*   Updated: 2021/11/05 02:31:21 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,4 +17,3 @@ int	ft_isascii(int c)
 	else
 		return (0);
 }
-

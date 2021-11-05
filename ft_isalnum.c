@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:10:50 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/03 18:33:47 by elehtora         ###   ########.fr       */
+/*   Updated: 2021/11/05 02:30:59 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,3 @@ int	ft_isalnum(int c)
 	else
 		return (0);
 }
-
