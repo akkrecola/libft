@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrcchr.c                                      :+:      :+:    :+:   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 19:27:40 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/05 19:47:57 by elehtora         ###   ########.fr       */
+/*   Created: 2021/11/11 16:10:57 by elehtora          #+#    #+#             */
+/*   Updated: 2021/11/11 16:35:43 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strrchr(char *s, int c)
+void	ft_putstr(char const *s)
 {
-	int	len;
-
-	len = ft_strlen(s);
-	while (len >= 0)
+	while (*s != '\0')
 	{
-		if (s[len] == c)
-			return (&(s[len]));
-		len--;
+		ft_putchar(*s);
+		s++;
 	}
-	return (NULL);
-
+	ft_putchar('\n');
+}

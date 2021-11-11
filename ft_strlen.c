@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 02:24:51 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/05 02:28:35 by elehtora         ###   ########.fr       */
+/*   Updated: 2021/11/11 16:00:41 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlen(char *s)
 	size_t	len;
 
 	len = 0;
-	while (str[len] != '\0')
-		i++;
+	while (s[len] != '\0')
+		len++;
 	return (len);
 }
