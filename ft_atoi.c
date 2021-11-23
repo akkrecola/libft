@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 13:58:49 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/23 22:53:12 by elehtora         ###   ########.fr       */
+/*   Updated: 2021/11/23 23:23:36 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,17 @@ static const char	*set_sign(const char *nptr, int *sign)
 	return (nptr);
 }
 
+/*
+Integer overflow or underflow isn't handled on the actual atoi, therefore
+they're not handled here either.
+*/
+
 int	ft_atoi(const char *nptr)
 {
 	int	sign;
 	int	digit;
 	int	collector;
+	int	i;
 
 	nptr = skip_whitespace(nptr);
 	sign = 1;
@@ -59,11 +65,14 @@ int	ft_atoi(const char *nptr)
 	if (!sign)
 		return (0);
 	collector = 0;
-	while (is_digit(*nptr))
+	i = 0;
+	while (is_digit(nptr[i]))
 	{
-		digit = *nptr - '0';
+		if (i > 18)
+			return (-1);
+		digit = nptr[i] - '0';
 		collector = collector * 10 + digit;
-		nptr++;
+		i++;
 	}
 	return (sign * collector);
 }
