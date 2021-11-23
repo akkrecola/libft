@@ -6,11 +6,10 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 13:58:49 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/11 16:37:03 by elehtora         ###   ########.fr       */
+/*   Updated: 2021/11/23 22:53:12 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
 static int	is_digit(char c)
@@ -30,21 +29,22 @@ static int	is_whitespace(char c)
 		return (0);
 }
 
-static void	skip_whitespace(const char *str)
+static const char	*skip_whitespace(const char *str)
 {
 	while (is_whitespace(*str))
 		str++;
+	return (str);
 }
 
-static void	set_sign(const char *nptr, int *sign)
+static const char	*set_sign(const char *nptr, int *sign)
 {
 	if ((*nptr == '+' || *nptr == '-') && is_digit(*(nptr + 1)))
 	{
 		if (*nptr == '-')
-			*sign *= -1;
+			*sign = -1;
+		nptr++;
 	}
-	else
-		*sign = 0;
+	return (nptr);
 }
 
 int	ft_atoi(const char *nptr)
@@ -53,14 +53,11 @@ int	ft_atoi(const char *nptr)
 	int	digit;
 	int	collector;
 
-	ft_putstr("Breakpoint A\n");
-	skip_whitespace(nptr);
-	ft_putstr("Breakpoint B\n");
-	set_sign(nptr, &sign);
-	ft_putstr("Breakpoint C\n");
+	nptr = skip_whitespace(nptr);
+	sign = 1;
+	nptr = set_sign(nptr, &sign);
 	if (!sign)
 		return (0);
-	nptr++;
 	collector = 0;
 	while (is_digit(*nptr))
 	{
@@ -68,5 +65,5 @@ int	ft_atoi(const char *nptr)
 		collector = collector * 10 + digit;
 		nptr++;
 	}
-	return (collector);
+	return (sign * collector);
 }
