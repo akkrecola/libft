@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 18:29:31 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/24 04:48:46 by elehtora         ###   ########.fr       */
+/*   Created: 2021/11/11 17:03:39 by elehtora          #+#    #+#             */
+/*   Updated: 2021/11/24 05:15:55 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <string.h>
 
-/* Prints only the sign, need to debug. Implementing putnbr for that. */
+/* Check the pointer cast and integer byte width compitability */
 
-char	*ft_itoa(int n)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	char		*str;
-	short int	sign;
-	short int	digs;
+	int	*p;
 
-	sign = 0;
-	if (n < 0)
-		sign = 1;
-	digs = ft_dgtcnt(n) + sign;
-	str = ft_strnew((size_t) digs);
-	while (n > 9)
+	p = (int *) s;
+	while (n > 0)
 	{
-		digs--;
-		str[digs] = n % 10;
-		n = (n - n % 10) / 10;
+		*p = c;
+		p++;
+		n--;
 	}
-	str[digs] = n;
-	if (sign == 1)
-		str[0] = '-';
-	return (str);
+	return (s);
 }

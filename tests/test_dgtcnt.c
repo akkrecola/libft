@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   test_dgtcnt.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 18:29:31 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/24 04:48:46 by elehtora         ###   ########.fr       */
+/*   Created: 2021/11/24 02:54:22 by elehtora          #+#    #+#             */
+/*   Updated: 2021/11/24 03:08:41 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
+#include <stdio.h>
 
-/* Prints only the sign, need to debug. Implementing putnbr for that. */
-
-char	*ft_itoa(int n)
+int	main(int argc, char **argv)
 {
-	char		*str;
-	short int	sign;
-	short int	digs;
+	int	nb;
 
-	sign = 0;
-	if (n < 0)
-		sign = 1;
-	digs = ft_dgtcnt(n) + sign;
-	str = ft_strnew((size_t) digs);
-	while (n > 9)
-	{
-		digs--;
-		str[digs] = n % 10;
-		n = (n - n % 10) / 10;
-	}
-	str[digs] = n;
-	if (sign == 1)
-		str[0] = '-';
-	return (str);
+	if (argc == 1)
+		ft_putstr("Please input an integer value.");
+	if (argc > 2)
+		ft_putstr("Too many arguments; use only one.");
+	nb = ft_atoi(argv[1]);
+	printf("Input %d has %d digits.\n", nb, ft_dgtcnt(nb));
+
+	return (0);
 }
+

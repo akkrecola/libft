@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   test_memalloc.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 18:29:31 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/24 04:48:46 by elehtora         ###   ########.fr       */
+/*   Created: 2021/11/15 13:02:20 by elehtora          #+#    #+#             */
+/*   Updated: 2021/11/16 21:43:17 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <string.h>
 
-/* Prints only the sign, need to debug. Implementing putnbr for that. */
+/*
+   Testing memalloc, memdel, memmove, memchr, memcpy, memset
+ */
 
-char	*ft_itoa(int n)
+int	main(void)
 {
-	char		*str;
-	short int	sign;
-	short int	digs;
+	char	*str;
+	int		i;
+	size_t	size;
 
-	sign = 0;
-	if (n < 0)
-		sign = 1;
-	digs = ft_dgtcnt(n) + sign;
-	str = ft_strnew((size_t) digs);
-	while (n > 9)
-	{
-		digs--;
-		str[digs] = n % 10;
-		n = (n - n % 10) / 10;
-	}
-	str[digs] = n;
-	if (sign == 1)
-		str[0] = '-';
-	return (str);
+	i = 0;
+	size = 10;
+	str = ft_memalloc(size);
+	ft_memset(str, 'a', size - 1);
+	ft_putstr(str);
+	ft_memdel(&str);
+	return (0);
 }
+
