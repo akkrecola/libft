@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_bcmp.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/03 17:44:28 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/24 02:31:28 by elehtora         ###   ########.fr       */
+/*   Created: 2021/11/24 02:15:40 by elehtora          #+#    #+#             */
+/*   Updated: 2021/11/24 02:29:09 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+#include <string.h>
+
+int	bcmp(const void *s1, const void *s2, size_t n);
 {
-	if ('0' <= c && c <= '9')
-		return (1);
-	else
-		return (0);
+	while (n-- > 0)
+	{
+		if (s1[n] != s2[n])
+			return (1);
+	}
+	return (0);
 }
