@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 18:29:31 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/24 04:48:46 by elehtora         ###   ########.fr       */
+/*   Updated: 2021/11/27 02:47:59 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,19 @@ char	*ft_itoa(int n)
 
 	sign = 0;
 	if (n < 0)
+	{
 		sign = 1;
+		n *= -1;
+	}
 	digs = ft_dgtcnt(n) + sign;
 	str = ft_strnew((size_t) digs);
 	while (n > 9)
 	{
 		digs--;
-		str[digs] = n % 10;
+		str[digs] = (n % 10) + '0';
 		n = (n - n % 10) / 10;
 	}
-	str[digs] = n;
+	str[digs - 1] = n + '0';
 	if (sign == 1)
 		str[0] = '-';
 	return (str);
