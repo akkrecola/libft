@@ -6,13 +6,13 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 16:38:13 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/11 16:46:19 by elehtora         ###   ########.fr       */
+/*   Updated: 2021/11/27 03:26:38 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_putnbr(int n) // defunct: need itoa or the like
+void	ft_putnbr(int n)
 {
-	write(1, &n, 4);
+	ft_putstr(ft_itoa(n));
 }
