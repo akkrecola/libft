@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 13:02:20 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/16 21:43:17 by elehtora         ###   ########.fr       */
+/*   Updated: 2021/12/01 03:46:49 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,16 @@
 int	main(void)
 {
 	char	*str;
-	int		i;
 	size_t	size;
 
-	i = 0;
 	size = 10;
-	str = ft_memalloc(size);
-	ft_memset(str, 'a', size - 1);
+	str = (char *)ft_memalloc(size);
+	ft_memset(str, 'a', size);
 	ft_putstr(str);
-	ft_memdel(&str);
+	ft_putnbr(ft_strlen(str));
+	ft_memdel((void **)&str);
+	ft_putstr(str);
+	ft_putstr(NULL);
 	return (0);
 }
 
