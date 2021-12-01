@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 18:31:06 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/16 21:41:13 by elehtora         ###   ########.fr       */
+/*   Updated: 2021/12/01 03:22:22 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,10 @@ to 0. Return NULL on allocation failure.
 void	*ft_memalloc(size_t size)
 {
 	void	*area;
-	int		i;
 
-	area = malloc(size);
+	area = (char *)malloc(size);
 	if (area == NULL)
 		return (NULL);
-	ft_bzero(&area, size);
-//	i = -1;
-//	while (++i < size)
-//		area[i] = '\0';
+	ft_bzero(area, size);
 	return (area);
 }

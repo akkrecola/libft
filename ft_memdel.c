@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 17:12:11 by elehtora          #+#    #+#             */
-/*   Updated: 2021/12/01 02:56:12 by elehtora         ###   ########.fr       */
+/*   Created: 2021/11/11 18:47:41 by elehtora          #+#    #+#             */
+/*   Updated: 2021/12/01 03:52:55 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include <string.h>
 
-/* Check the pointer shenanigans - looks sketch. */
+/* Frees the memory (area) pointed to by ap, then 'forgets'
+   the initial pointer by setting it to NULL. */
 
-void	ft_bzero(void *s, size_t n)
+void	ft_memdel(void **ap)
 {
-	char	*p;
-
-	p = (char *) s;
-	while (n-- > 0)
-	{
-		*p = '\0';
-		p++;
-	}
+	free(*ap);
+	*ap = NULL;
 }
