@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 17:12:11 by elehtora          #+#    #+#             */
-/*   Updated: 2021/12/01 02:56:12 by elehtora         ###   ########.fr       */
+/*   Created: 2021/11/11 16:13:14 by elehtora          #+#    #+#             */
+/*   Updated: 2021/12/01 03:00:52 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <unistd.h>
 
-/* Check the pointer shenanigans - looks sketch. */
-
-void	ft_bzero(void *s, size_t n)
+void	ft_putchar_endl(char c, int fd)
 {
-	char	*p;
-
-	p = (char *) s;
-	while (n-- > 0)
-	{
-		*p = '\0';
-		p++;
-	}
+	write(1, &c, fd);
 }
