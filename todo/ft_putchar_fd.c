@@ -6,13 +6,13 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 16:13:14 by elehtora          #+#    #+#             */
-/*   Updated: 2021/12/01 03:00:52 by elehtora         ###   ########.fr       */
+/*   Updated: 2021/12/13 15:38:33 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar_endl(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
 	write(1, &c, fd);
 }

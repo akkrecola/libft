@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 18:59:59 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/27 03:54:16 by elehtora         ###   ########.fr       */
+/*   Created: 2021/11/11 17:12:11 by elehtora          #+#    #+#             */
+/*   Updated: 2021/12/01 02:56:12 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-char	*ft_strchr(const char *s, int c)
+/* Check the pointer shenanigans - looks sketch. */
+
+void	ft_bzero(void *s, size_t n)
 {
-	while (*s != '\0' || c == '\0')
+	char	*p;
+
+	p = (char *) s;
+	while (n-- > 0)
 	{
-		if (*s == c)
-			return ((char *) s);
-		s++;
+		*p = '\0';
+		p++;
 	}
-	return (NULL);
 }
