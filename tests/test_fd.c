@@ -1,18 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   test_fd.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 16:13:14 by elehtora          #+#    #+#             */
-/*   Updated: 2021/12/13 15:38:33 by elehtora         ###   ########.fr       */
+/*   Created: 2021/12/13 15:36:01 by elehtora          #+#    #+#             */
+/*   Updated: 2021/12/13 15:54:13 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+int		main(int argc, char **argv)
 {
-	write(1, &c, fd);
+	int		fd;
+	char	c;
+	char	*s;
+
+	ft_putstr("Params: File descriptor, string");
+	if (argc < 3)
+	{
+		ft_putstr("Too few arguments.");
+		return -1;
+	}
+	if (argc > 3)
+	{
+		ft_putstr("Too many arguments.");
+		return -1;
+	}
+	fd = ft_atoi(argv[1]);
+	s = argv[2];
+	c = s[0];
+	ft_putchar_fd(c, fd);
+	return (0);
 }
