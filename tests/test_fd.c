@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 15:36:01 by elehtora          #+#    #+#             */
-/*   Updated: 2021/12/13 15:54:13 by elehtora         ###   ########.fr       */
+/*   Updated: 2021/12/13 19:00:38 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,8 @@ int		main(int argc, char **argv)
 	s = argv[2];
 	c = s[0];
 	ft_putchar_fd(c, fd);
+	ft_putendl_fd(s, fd);
+	ft_putstr_fd(s, fd);
+	ft_putnbr_fd(ft_atoi(s), fd);
 	return (0);
 }

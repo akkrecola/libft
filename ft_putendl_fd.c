@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 17:12:11 by elehtora          #+#    #+#             */
-/*   Updated: 2021/12/01 02:56:12 by elehtora         ###   ########.fr       */
+/*   Created: 2021/11/11 16:10:57 by elehtora          #+#    #+#             */
+/*   Updated: 2021/12/13 18:58:37 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-/* Check the pointer shenanigans - looks sketch. */
-
-void	ft_bzero(void *s, size_t n)
+void	ft_putendl_fd(char const *s, int fd)
 {
-	char	*p;
-
-	p = (char *) s;
-	while (n-- > 0)
-	{
-		*p = '\0';
-		p++;
-	}
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }

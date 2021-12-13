@@ -6,13 +6,13 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 16:10:57 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/11 16:35:43 by elehtora         ###   ########.fr       */
+/*   Updated: 2021/12/13 18:56:44 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+void	ft_putendl(char const *s)
 {
 	while (*s != '\0')
 	{
