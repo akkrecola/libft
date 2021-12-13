@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_dgtcnt.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 18:59:59 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/27 03:54:16 by elehtora         ###   ########.fr       */
+/*   Created: 2021/11/24 02:44:17 by elehtora          #+#    #+#             */
+/*   Updated: 2021/11/24 04:04:34 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+/*
+   Assumes the input to be a valid integer, i.e. no less than 1 in length.
+   Returns the count of digits or -1 on error. Inputs out of integer range
+   result in unpredictable behaviour.
+ */
 
-char	*ft_strchr(const char *s, int c)
+int	ft_dgtcnt(int n)
 {
-	while (*s != '\0' || c == '\0')
+	int	count;
+
+	if (n < 0)
+		n *= -1;
+	count = 0;
+	while (n > 9)
 	{
-		if (*s == c)
-			return ((char *) s);
-		s++;
+		n = (n - n % 10) / 10;
+		count++;
 	}
-	return (NULL);
+	return (count + 1);
 }

@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 18:59:59 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/27 03:54:16 by elehtora         ###   ########.fr       */
+/*   Created: 2021/11/11 18:47:41 by elehtora          #+#    #+#             */
+/*   Updated: 2021/12/01 03:52:55 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include <string.h>
 
-char	*ft_strchr(const char *s, int c)
+/* Frees the memory (area) pointed to by ap, then 'forgets'
+   the initial pointer by setting it to NULL. */
+
+void	ft_memdel(void **ap)
 {
-	while (*s != '\0' || c == '\0')
-	{
-		if (*s == c)
-			return ((char *) s);
-		s++;
-	}
-	return (NULL);
+	free(*ap);
+	*ap = NULL;
 }

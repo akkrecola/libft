@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   test_memalloc.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 18:59:59 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/27 03:54:16 by elehtora         ###   ########.fr       */
+/*   Created: 2021/12/01 04:01:23 by elehtora          #+#    #+#             */
+/*   Updated: 2021/12/01 04:01:42 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <string.h>
 
-char	*ft_strchr(const char *s, int c)
+/*
+   Testing memalloc, memdel, memmove, memchr, memcpy, memset
+TODO: memmove, memchr, memcpy
+ */
+
+int	main(void)
 {
-	while (*s != '\0' || c == '\0')
-	{
-		if (*s == c)
-			return ((char *) s);
-		s++;
-	}
-	return (NULL);
+	char	*str;
+	size_t	size;
+
+	size = 10;
+	str = (char *)ft_memalloc(size);
+	ft_memset(str, 'a', size);
+	ft_putstr(str);
+	ft_putnbr(ft_strlen(str));
+	ft_memdel((void **)&str);
+	ft_putstr(str);
+	ft_putstr(NULL);
+	return (0);
 }
+

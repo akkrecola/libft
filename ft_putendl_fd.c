@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 18:31:06 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/11 19:02:09 by elehtora         ###   ########.fr       */
+/*   Created: 2021/11/11 16:10:57 by elehtora          #+#    #+#             */
+/*   Updated: 2021/12/13 18:58:37 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void	*ft_strnew(size_t size)
+void	ft_putendl_fd(char const *s, int fd)
 {
-	char	*area;
-	int		i;
-
-	area = (char *)malloc(size);
-	if (area == NULL)
-		return (NULL);
-	i = -1;
-	while (++i < size)
-		area[i] = '\0';
-	return (area);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }

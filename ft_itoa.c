@@ -1,24 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 18:59:59 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/27 03:54:16 by elehtora         ###   ########.fr       */
+/*   Created: 2021/11/11 18:29:31 by elehtora          #+#    #+#             */
+/*   Updated: 2021/12/13 18:28:09 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_itoa(int n)
 {
-	while (*s != '\0' || c == '\0')
+	char		*str;
+	short int	sign;
+	short int	digs;
+
+	sign = 0;
+	if (n < 0)
 	{
-		if (*s == c)
-			return ((char *) s);
-		s++;
+		sign = 1;
+		n *= -1;
 	}
-	return (NULL);
+	digs = ft_dgtcnt(n) + sign;
+	str = ft_strnew((size_t) digs);
+	while (n > 9)
+	{
+		digs--;
+		str[digs] = (n % 10) + '0';
+		n = (n - n % 10) / 10;
+	}
+	str[digs - 1] = n + '0';
+	if (sign == 1)
+		str[0] = '-';
+	return (str);
 }

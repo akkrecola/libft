@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 16:13:14 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/11 16:35:56 by elehtora         ###   ########.fr       */
+/*   Created: 2021/11/11 17:03:39 by elehtora          #+#    #+#             */
+/*   Updated: 2021/12/01 03:32:51 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <string.h>
 
-void	ft_putchar(char c)
+/* Check the pointer cast and integer byte width compitability */
+
+void	*ft_memset(void *s, int c, size_t n)
 {
-	write(1, &c, 1);
+	char	*p;
+
+	p = (char *)s;
+	while (n-- > 0)
+	{
+		*p = c;
+		p++;
+	}
+	return (s);
 }
