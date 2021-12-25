@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel.c                                        :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/19 23:57:22 by elehtora          #+#    #+#             */
-/*   Updated: 2021/12/19 23:59:53 by elehtora         ###   ########.fr       */
+/*   Created: 2021/12/22 22:08:27 by elehtora          #+#    #+#             */
+/*   Updated: 2021/12/25 02:24:06 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t)){
-	
+int	ft_strnequ(char const *s1, char const *s2, size_t n)
+{
+	n--;
+	while (n != 0 && *s1 != '\0' && *s2 != '\0')
+	{
+		if (*s1 != *s2)
+			return (0);
+		s1++;
+		s2++;
+		n--;
+	}
+	if (*s1 != *s2)
+		return (0);
+	return (1);
 }

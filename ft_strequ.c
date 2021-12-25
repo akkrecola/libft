@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 18:59:59 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/27 03:54:16 by elehtora         ###   ########.fr       */
+/*   Created: 2021/12/22 21:51:43 by elehtora          #+#    #+#             */
+/*   Updated: 2021/12/24 04:41:58 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int ft_strequ(char const *s1, char const *s2)
 {
-	while (*s != '\0' || c == '\0')
+	while (*s1 != '\0' && *s2 != '\0')
 	{
-		if (*s == c)
-			return ((char *) s);
-		s++;
+		if (*s1 != *s2)
+			return (0);
+		s1++;
+		s2++;
 	}
-	return (NULL);
+	if (*s1 != *s2)
+		return (0);
+	return (1);
 }
