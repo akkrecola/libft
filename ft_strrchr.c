@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/19 23:57:22 by elehtora          #+#    #+#             */
-/*   Updated: 2021/12/19 23:59:53 by elehtora         ###   ########.fr       */
+/*   Created: 2021/11/05 19:27:40 by elehtora          #+#    #+#             */
+/*   Updated: 2022/01/08 06:42:32 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include "libft.h"
 
+char	*ft_strrchr(const char *s, int c)
+{
+	int	len;
 
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t)){
-	
+	len = ft_strlen(s);
+	while (len >= 0)
+	{
+		if (s[len] == c)
+			return ((char *) &(s[len]));
+		len--;
+	}
+	return (NULL);
 }

@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/19 23:57:22 by elehtora          #+#    #+#             */
-/*   Updated: 2021/12/19 23:59:53 by elehtora         ###   ########.fr       */
+/*   Created: 2022/01/08 07:03:40 by elehtora          #+#    #+#             */
+/*   Updated: 2022/01/08 09:59:13 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	char	*new_str;
+	int		i;
 
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t)){
-	
+	new_str = ft_strnew(ft_strlen(s));
+	if (new_str == NULL)
+		return (NULL);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		new_str[i] = f(i, s[i]);
+		i++;
+	}
+	return (new_str);
 }

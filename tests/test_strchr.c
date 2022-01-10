@@ -6,28 +6,28 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 13:38:16 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/27 13:04:02 by elehtora         ###   ########.fr       */
+/*   Updated: 2021/12/25 03:36:27 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
-#include <stdlib.h>
+#include <string.h>
 
 int	main(int argc, char **argv)
 {
-	char	*str;
 	char	c;
+	char	*result;
 
 	if (argc != 3)
+	{
+		ft_putstr("ERROR: Input a string and a char to be searched.\n");
 		return (-1);
-	str = argv[1];
-	c = *(argv[2]);
-	ft_putstr(str);
-	// ft_putchar('\n');
-	ft_putchar(c);
-	ft_putstr("Result: ");
-	ft_putchar(*(ft_strchr(argv[1], ft_atoi(argv[2]))));
-	// printf("Result: %s", ft_strchr(argv[1], ft_atoi(argv[2])));
+	}
+	c = (char) argv[2][0];
+	result = ft_strchr(argv[1], c);
+	if (result != NULL)
+		ft_putstr(result);
+	else
+		ft_putstr("No match was found.\n");
 	return (0);
 }

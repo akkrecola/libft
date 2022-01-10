@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 18:28:50 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/16 18:36:49 by elehtora         ###   ########.fr       */
+/*   Created: 2021/12/22 21:51:43 by elehtora          #+#    #+#             */
+/*   Updated: 2021/12/24 04:41:58 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
-{
-	int	i;
+#include "libft.h"
 
-	i = 0;
-	while (s[i] != '\0')
+int ft_strequ(char const *s1, char const *s2)
+{
+	while (*s1 != '\0' && *s2 != '\0')
 	{
-		f(&(s[i]));
-		i++;
+		if (*s1 != *s2)
+			return (0);
+		s1++;
+		s2++;
 	}
+	if (*s1 != *s2)
+		return (0);
+	return (1);
 }
