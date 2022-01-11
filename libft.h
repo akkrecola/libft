@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:00:26 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/10 00:01:03 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/01/11 12:16:01 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,6 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int		ft_dgtcnt(int n);
 void	ft_nl(void);
 void	ft_putstrnl(char const *s);
+void	ft_putcharnl(char c);
 
 #endif

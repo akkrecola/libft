@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_putcharnl.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 18:03:39 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/11 18:28:42 by elehtora         ###   ########.fr       */
+/*   Created: 2021/11/11 16:13:14 by elehtora          #+#    #+#             */
+/*   Updated: 2022/01/11 12:16:57 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <unistd.h>
+#include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	ft_putcharnl(char c)
 {
-	while (n-- > 0)
-	{
-		if (*s == c)
-			return (*s);
-		s++;
-	}
-	return (NULL);
+	ft_putchar(c);
+	ft_putchar('\n');
 }
