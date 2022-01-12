@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putmemnl.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 17:27:02 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/11 16:37:44 by elehtora         ###   ########.fr       */
+/*   Created: 2022/01/11 16:20:36 by elehtora          #+#    #+#             */
+/*   Updated: 2022/01/11 16:28:57 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <string.h>
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
-{
-	size_t	i;
+/*
+   Outputs n characters of *s memory to stdout.
+*/
 
-	i = 0;
+void	ft_putmemnl(char *s, size_t n)
+{
 	while (n-- > 0)
 	{
-		((char *)dest)[i] = ((char *)src)[i];
-		i++;
+		ft_putchar(*s);
+		s++;
 	}
-	return (dest);
+	ft_putchar('\n');
 }

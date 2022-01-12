@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:00:26 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/11 12:16:01 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/01/12 12:13:12 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct s_list
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
-void	*ft_memccpy(void *dest, const void *src, size_t n);
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
@@ -89,10 +89,13 @@ void	ft_lstadd(t_list **alst, t_list *new);
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
-/* Voluntary functions */
+/* Voluntary functions (for testing) */
 int		ft_dgtcnt(int n);
 void	ft_nl(void);
 void	ft_putstrnl(char const *s);
 void	ft_putcharnl(char c);
+void	ft_putmem(char *s, size_t n);
+void	ft_putmemnl(char *s, size_t n);
+void	ft_alphabetize(void *dest, int n);
 
 #endif

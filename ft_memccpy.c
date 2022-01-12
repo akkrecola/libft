@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 17:27:02 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/11 16:37:44 by elehtora         ###   ########.fr       */
+/*   Created: 2021/11/11 17:40:43 by elehtora          #+#    #+#             */
+/*   Updated: 2022/01/12 14:23:47 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
-{
-	size_t	i;
+/*
+   Copies from source to destination for n bytes or until c is found in 
+   source.
+ */
 
-	i = 0;
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
+{
 	while (n-- > 0)
 	{
-		((char *)dest)[i] = ((char *)src)[i];
-		i++;
+		*((char *)dest) = *((char *)src);
+		if ((*(char *)src) == c)
+			return (dest + 1);
+		dest++;
+		src++;
 	}
-	return (dest);
+	return (NULL);
 }

@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_putmem.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 17:40:43 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/16 19:20:06 by elehtora         ###   ########.fr       */
+/*   Created: 2022/01/11 16:20:36 by elehtora          #+#    #+#             */
+/*   Updated: 2022/01/11 16:25:55 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <string.h>
 
-void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
+/*
+   Outputs n characters of *s memory to stdout.
+*/
+
+void	ft_putmem(char *s, size_t n)
 {
-	while (n > 0 && *src != '\0')
+	while (n-- > 0)
 	{
-		if (*src == c)
-			return (src);
-		*dest = *src;
-		dest++;
-		src++;
-		n--;
+		ft_putchar(*s);
+		s++;
 	}
-	return (NULL);
 }
