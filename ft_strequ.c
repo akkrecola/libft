@@ -6,13 +6,13 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 21:51:43 by elehtora          #+#    #+#             */
-/*   Updated: 2021/12/24 04:41:58 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/01/12 14:51:44 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_strequ(char const *s1, char const *s2)
+int	ft_strequ(char const *s1, char const *s2)
 {
 	while (*s1 != '\0' && *s2 != '\0')
 	{
