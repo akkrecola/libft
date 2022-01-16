@@ -1,16 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/16 01:02:16 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/16 12:07:36 by elehtora         ###   ########.fr       */
+/*   Created: 2022/01/16 12:09:40 by elehtora          #+#    #+#             */
+/*   Updated: 2022/01/16 14:00:19 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_lstadd(t_list **alst, t_list *new)
+#include <stdlib.h>
+#include <string.h>
+#include "libft.h"
+
+void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
-	new->next = *alst;
+	del((*alst)->content, (*alst)->content_size);
+	free(*alst);
+	*alst = NULL;
 }

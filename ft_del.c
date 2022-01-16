@@ -1,16 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_del.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/16 01:02:16 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/16 12:07:36 by elehtora         ###   ########.fr       */
+/*   Created: 2022/01/16 12:29:47 by elehtora          #+#    #+#             */
+/*   Updated: 2022/01/16 13:19:33 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_lstadd(t_list **alst, t_list *new)
+#include "libft.h"
+
+void	ft_del(void *content, size_t content_size)
 {
-	new->next = *alst;
+	ft_bzero(content, content_size);
+	ft_memdel(&content);
 }
