@@ -6,9 +6,11 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 01:02:16 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/16 12:07:36 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/01/16 16:54:44 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_lstadd(t_list **alst, t_list *new)
 {
