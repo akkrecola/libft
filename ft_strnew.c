@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 18:31:06 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/10 14:29:00 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/01/19 00:30:31 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ void	*ft_strnew(size_t size)
 	i = -1;
 	while (++i < size)
 		area[i] = '\0';
-	return (area);
+	return ((void *) area);
 }

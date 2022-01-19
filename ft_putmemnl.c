@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 16:20:36 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/11 16:28:57 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/01/19 00:50:24 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@
 
 void	ft_putmemnl(char *s, size_t n)
 {
+	if (s == NULL)
+	{
+		ft_putstrnl("ERROR: putmemnl received NULL pointer.");
+		return ;
+	}
 	while (n-- > 0)
 	{
 		ft_putchar(*s);
