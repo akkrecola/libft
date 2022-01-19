@@ -1,27 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstrnl.c                                      :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 16:10:57 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/19 15:49:42 by elehtora         ###   ########.fr       */
+/*   Created: 2022/01/19 15:16:12 by elehtora          #+#    #+#             */
+/*   Updated: 2022/01/19 16:01:48 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 
-/* A simple putstr variation that prints a newline after the output. */
-
-void	ft_putstrnl(char const *s)
+static int	strequ_noterm(char const *s1, char const *s2)
 {
-	if (s == NULL)
-		return ;
-	while (*s != '\0')
+	while (*s1 != '\0' && *s2 != '\0')
 	{
-		ft_putchar(*s);
-		s++;
+		if (*s1 != *s2)
+			return (0);
+		s1++;
+		s2++;
 	}
-	ft_putchar('\n');
+	if (*s2 != '\0')
+		return (0);
+	return (1);
+}
+
+char	*ft_strstr(const char *haystack, const char *needle)
+{
+	while (*haystack)
+	{
+		if (*haystack == *needle)
+		{
+			if (strequ_noterm(haystack, needle) == 1)
+				return ((char *) haystack);
+		}
+		haystack++;
+	}
+	return (NULL);
 }
