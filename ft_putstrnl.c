@@ -6,13 +6,16 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 16:10:57 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/19 15:49:42 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/01/19 20:07:09 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* A simple putstr variation that prints a newline after the output. */
+/*
+   An ft_putendl clone. Forgot that it existed and wrote a bunch of tests
+   with this already. Whoops.
+ */
 
 void	ft_putstrnl(char const *s)
 {

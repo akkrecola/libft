@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 16:10:57 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/19 20:04:31 by elehtora         ###   ########.fr       */
+/*   Created: 2022/01/19 18:34:38 by elehtora          #+#    #+#             */
+/*   Updated: 2022/01/19 18:40:09 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char const *s, int fd)
+char	*ft_strcat(char *dest, const char *src)
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	while (*dest != '\0')
+		dest++;
+	ft_strcpy(dest, src);
+	return (dest);
 }

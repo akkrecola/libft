@@ -6,7 +6,7 @@
 #    By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 15:27:40 by elehtora          #+#    #+#              #
-#    Updated: 2022/01/19 14:43:22 by elehtora         ###   ########.fr        #
+#    Updated: 2022/01/19 19:59:57 by elehtora         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,6 +64,7 @@ SRC			=	ft_alphabetize.c	\
 				ft_strmapi.c		\
 				ft_strncmp.c		\
 				ft_strncpy.c		\
+				ft_strlcpy.c		\
 				ft_strnequ.c		\
 				ft_strnew.c			\
 				ft_strrchr.c		\
