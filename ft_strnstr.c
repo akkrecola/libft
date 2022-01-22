@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 15:16:12 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/20 10:53:25 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/01/20 11:30:05 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	strequ_noterm(char const *s1, char const *s2, size_t *len)
 			return (0);
 		s1++;
 		s2++;
-		i++;;
+		i++;
 	}
 	if (*s2 != '\0')
 		return (0);

@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:00:26 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/19 19:54:47 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/01/22 18:38:42 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,9 +100,11 @@ void	ft_nl(void);
 void	ft_putstrnl(char const *s);
 void	ft_putcharnl(char c);
 void	ft_putnbrnl(int n);
+void	ft_putlstnl(t_list *elem);
 void	ft_putmem(char *s, size_t n);
 void	ft_putmemnl(char *s, size_t n);
 void	ft_alphabetize(void *dest, int n);
 void	*ft_realloc(void *area, size_t old_size, size_t new_size);
+t_list	*ft_lstcpyone(t_list *link);
 
 #endif

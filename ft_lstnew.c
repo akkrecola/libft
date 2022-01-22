@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 19:03:50 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/16 13:48:53 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/01/20 21:09:42 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,11 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	{
 		list->content = NULL;
 		list->content_size = 0;
-	} else {
-		list->content = (void *) content;
+	}
+	else
+	{
+		list->content = ft_memalloc(content_size);
+		ft_memcpy(list->content, (void *) content, content_size);
 		list->content_size = content_size;
 	}
 	list->next = NULL;

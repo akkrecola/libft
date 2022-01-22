@@ -6,13 +6,15 @@
 #    By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 15:27:40 by elehtora          #+#    #+#              #
-#    Updated: 2022/01/19 19:59:57 by elehtora         ###   ########.fr        #
+#    Updated: 2022/01/22 18:38:33 by elehtora         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+# VARIABLES
+
 NAME = libft.a
 
-SRC			=	ft_alphabetize.c	\
+SRCS		=	ft_alphabetize.c	\
 				ft_atoi.c			\
 				ft_bzero.c			\
 				ft_del.c			\
@@ -24,10 +26,13 @@ SRC			=	ft_alphabetize.c	\
 				ft_islower.c		\
 				ft_isprint.c		\
 				ft_isupper.c		\
+				ft_tolower.c		\
+				ft_toupper.c		\
 				ft_itoa.c			\
 				ft_lstadd.c			\
 				ft_lstdelone.c		\
 				ft_lstnew.c			\
+				ft_lstcpyone.c		\
 				ft_memalloc.c		\
 				ft_memccpy.c		\
 				ft_memchr.c			\
@@ -43,6 +48,7 @@ SRC			=	ft_alphabetize.c	\
 				ft_putcharnl.c		\
 				ft_putendl.c		\
 				ft_putendl_fd.c		\
+				ft_putlstnl.c		\
 				ft_putmem.c			\
 				ft_putmemnl.c		\
 				ft_putnbr.c			\
@@ -55,6 +61,7 @@ SRC			=	ft_alphabetize.c	\
 				ft_strclr.c			\
 				ft_strcmp.c			\
 				ft_strcpy.c			\
+				ft_strdel.c			\
 				ft_strequ.c			\
 				ft_striter.c		\
 				ft_striteri.c		\
@@ -71,34 +78,48 @@ SRC			=	ft_alphabetize.c	\
 				ft_strsplit.c		\
 				ft_strsub.c			\
 				ft_strtrim.c		\
-
-
 #				ft_lstdel.c			\
-				ft_lstmap.c			\
-				ft_lstiter.c
+#				ft_lstmap.c			\
+#				ft_lstiter.c		
 
-OBJ = $(addsuffix .o, $(basename $(SRC)))
 
-FLAGS = -Wall -Wextra -Werror
+OBJS = $(addsuffix .o, $(basename $(SRCS)))
+
+CC=gcc
+CFLAGS = -c -Wall -Wextra -Werror
+LIB=ar rc
+RM=/bin/rm -f
+OUT=*.out
+
+# RULES
 
 all : $(NAME) clean
 
-CC :
-	@gcc -c
-
 $(NAME) :
-	@gcc -c $(CFLAGS) $(SRC)
-	@ar rc $(NAME) $(OBJ)
+	@$(CC) $(CFLAGS) $(SRCS)
+	@$(LIB) $(NAME) $(OBJS)
 
 clean :
-	@/bin/rm -f *.o
-
-so:
-	@gcc -c -nostartfiles -fPIC $(CFLAGS) $(SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJ)
+	@$(RM) $(OBJS) $(OUT)
 
 fclean : clean
-	@/bin/rm -f $(NAME)
+	@$(RM) $(NAME)
 
-re : fclean $(NAME) clean
+re : fclean all
 
+###############
+### TESTING ###
+###############
+
+# TEST VARIABLES
+
+TESTDIR=tests
+TESTS=$(wildcard $(TESTDIR)/*.c)
+# TESTBIN=
+TESTFLAGS=-lcriterion
+
+# TEST RULES
+
+#so:
+#	@gcc -c -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+#	@gcc -nostartfiles -shared -o libft.so $(OBJS)
