@@ -6,7 +6,7 @@
 #    By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 15:27:40 by elehtora          #+#    #+#              #
-#    Updated: 2022/01/22 18:38:33 by elehtora         ###   ########.fr        #
+#    Updated: 2022/01/23 13:35:52 by elehtora         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -95,7 +95,7 @@ OUT=*.out
 
 all : $(NAME) clean
 
-$(NAME) :
+$(NAME) : $(SRCS)
 	@$(CC) $(CFLAGS) $(SRCS)
 	@$(LIB) $(NAME) $(OBJS)
 
@@ -120,6 +120,6 @@ TESTFLAGS=-lcriterion
 
 # TEST RULES
 
-#so:
-#	@gcc -c -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-#	@gcc -nostartfiles -shared -o libft.so $(OBJS)
+so:
+	gcc -c -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)

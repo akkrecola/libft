@@ -6,16 +6,19 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 16:41:29 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/27 03:18:14 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/01/23 16:27:06 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 int	main()
 {
 	ft_putnbr(+123);
 	ft_putnbr(-42);
 	ft_putnbr(42);
+	ft_putnbr(0);
 
+	//printf("%d\n", (-11 % 10));
 }
