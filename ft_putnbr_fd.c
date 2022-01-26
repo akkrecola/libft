@@ -5,14 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/01 03:03:08 by elehtora          #+#    #+#             */
-/*   Updated: 2021/12/01 03:04:50 by elehtora         ###   ########.fr       */
+/*   Created: 2021/11/11 16:38:13 by elehtora          #+#    #+#             */
+/*   Updated: 2022/01/23 17:19:41 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
-void	ft_putnbr_fd(int n, int fd)
+static int	isdigit(int c)
 {
-	ft_putstr_fd(ft_itoa(n), fd);
+	if (-9 <= c && c <= 9)
+		return (1);
+	else
+		return (0);
+}
+	void	ft_putnbr_fd(int n, int fd)
+{
+	if (!isdigit(n))
+		ft_putnbr_fd((n - (n % 10)) / 10);
+	else if (n < 0)
+		write(fd, "-", 1);
+	if (n < 0)
+		n *= (-1);
+	n = n % 10 + '0';
+	write(fd, &n, 1);
 }

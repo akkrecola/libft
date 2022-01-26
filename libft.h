@@ -6,12 +6,16 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:00:26 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/22 18:38:42 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/01/24 18:51:32 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+/* Max integer definitions */
+# define MAX_INT 2147483647
+# define MIN_INT -2147483648
 
 /* Necessary (and permitted) inclusions */
 # include <string.h>
@@ -23,6 +27,7 @@ typedef struct s_list
 	size_t			content_size;
 	struct s_list	*next;
 }				t_list;
+
 
 /* Part 1 function prototypes */
 void	*ft_memset(void *s, int c, size_t n);
@@ -57,9 +62,6 @@ int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_atoi(const char *nptr);
-void	ft_putchar(char c);
-void	ft_putnbr(int n);
-void	ft_putstr(char const *s);
 
 /* Part 2 function prototypes */
 void	*ft_memalloc(size_t size);
@@ -78,6 +80,10 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s);
 char	**ft_strsplit(char const *s, char c);
 char	*ft_itoa(int n);
+void	ft_putchar(char c);
+void	ft_putnbr(int n);
+void	ft_putstr(char const *s);
+void	ft_putendl(char const *s);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char const *s, int fd);
 void	ft_putendl_fd(char const *s, int fd);
@@ -106,5 +112,6 @@ void	ft_putmemnl(char *s, size_t n);
 void	ft_alphabetize(void *dest, int n);
 void	*ft_realloc(void *area, size_t old_size, size_t new_size);
 t_list	*ft_lstcpyone(t_list *link);
+char	*ft_strnewi(const char *s);
 
 #endif

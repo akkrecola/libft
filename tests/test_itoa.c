@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 04:39:38 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/10 20:42:56 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/01/24 12:56:10 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main(void)
 {
 	int	tostr;
 
-	tostr = -123;
+	tostr = MIN_INT + 1;
 	ft_putstrnl(ft_itoa(tostr));
 	/*
 	if (argc != 2)

@@ -6,11 +6,13 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 18:29:31 by elehtora          #+#    #+#             */
-/*   Updated: 2021/12/13 18:28:09 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/01/24 13:39:29 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/* Doesn't handle INT_MIN (iteration done with positive) */
 
 char	*ft_itoa(int n)
 {
