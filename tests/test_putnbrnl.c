@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   test_putnbrnl.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 16:38:13 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/27 17:59:37 by elehtora         ###   ########.fr       */
+/*   Created: 2022/01/27 18:04:18 by elehtora          #+#    #+#             */
+/*   Updated: 2022/01/27 18:11:33 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
+//#include <stdio.h>
 
-static int	isdigit(int c)
+int	main()
 {
-	if (-9 <= c && c <= 9)
-		return (1);
-	else
-		return (0);
-}
+	ft_putnbrnl(+123);
+	ft_putnbrnl(-42);
+	ft_putnbrnl(42);
+	ft_putnbrnl(0);
+	ft_putnbrnl(INT_MIN);
+	ft_putnbrnl(INT_MAX);
 
-void	ft_putnbr(int n)
-{
-	long int	ln;
-
-	ln = (long int) n;
-	if (!isdigit(ln))
-		ft_putnbr((ln - (ln % 10)) / 10);
-	else if (ln < 0)
-		write(1, "-", 1);
-	if (ln < 0)
-		ln *= (-1);
-	ln = ln % 10 + '0';
-	write(1, &ln, 1);
+	return (0);
 }
