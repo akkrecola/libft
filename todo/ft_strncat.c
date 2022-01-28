@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 18:34:38 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/27 19:00:05 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/01/28 17:00:58 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,18 @@
 char	*ft_strncat(char *dest, const char *src, size_t n)
 {
 	char	*tmp;
+	size_t	i;
 
 	tmp = dest;
 	while (*tmp != '\0')
 		tmp++;
-	ft_strncpy(tmp, src, n);
+	i = 0;
+	while (src[i] != '\0' && i < n)
+	{
+		tmp[i] = src[i];
+		i++;
+	}
+	while (i <= n)
+		tmp[i++] = '\0';
 	return (dest);
 }
