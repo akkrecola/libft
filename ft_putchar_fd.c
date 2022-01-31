@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 16:13:14 by elehtora          #+#    #+#             */
-/*   Updated: 2021/12/13 15:38:33 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/01/31 04:44:34 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	write(1, &c, fd);
+	write(fd, &c, 1);
 }
