@@ -5,20 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 16:10:57 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/19 15:50:00 by elehtora         ###   ########.fr       */
+/*   Created: 2022/01/31 05:28:42 by elehtora          #+#    #+#             */
+/*   Updated: 2022/01/31 05:53:31 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "libft.h"
 
 void	ft_putstr(char const *s)
 {
-	if (s == NULL)
-		return ;
-	while (*s != '\0')
-	{
-		ft_putchar(*s);
-		s++;
-	}
+	write(1, s, ft_strlen(s));
 }
