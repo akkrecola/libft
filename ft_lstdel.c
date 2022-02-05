@@ -1,21 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/16 01:02:16 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/02 20:57:51 by elehtora         ###   ########.fr       */
+/*   Created: 2021/12/19 23:57:22 by elehtora          #+#    #+#             */
+/*   Updated: 2022/01/19 02:47:09 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <string.h>
+#include <stdlib.h>
 
-void	ft_lstadd(t_list **alst, t_list *new)
+/*
+   Currently NULLs only the last pointer to link (i.e. the head), while
+   the assignment could also mean that all pointers to links should be NULLed.
+ */
+
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	if (*alst == NULL)
-		*alst = new;
-	new->next = *alst;
+	t_list	*prev;
+
+	prev = *alst;
+	while (*alst)
+	{
+		*alst = (*alst)->next;
+		del(prev->content, prev->content_size);
+		free(prev);
+		prev = *alst;
+	}
+	*alst = NULL;
 }

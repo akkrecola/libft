@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 16:38:13 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/31 04:58:41 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/05 07:43:18 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_putnbr_fd(int n, int fd)
 
 	ln = (long int) n;
 	if (!isdigit(ln))
-		ft_putnbr_fd((ln - (ln % 10)) / 10);
+		ft_putnbr_fd((ln - (ln % 10)) / 10, fd);
 	else if (ln < 0)
 		write(fd, "-", 1);
 	if (ln < 0)

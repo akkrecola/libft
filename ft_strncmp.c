@@ -6,13 +6,13 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 02:24:10 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/05 02:30:41 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/05 04:28:57 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-int	ft_strncmp(char *s1, char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	int	i;
 
@@ -25,6 +25,8 @@ int	ft_strncmp(char *s1, char *s2, size_t n)
 			return (-1);
 		i++;
 	}
+	if (n - i <= 0)
+		return (0);
 	if (s2[i] == '\0' && s1[i] != '\0')
 		return (1);
 	if (s1[i] == '\0' && s2[i] != '\0')
