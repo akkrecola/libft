@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_itoa.c                                        :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/24 04:39:38 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/11 13:37:34 by elehtora         ###   ########.fr       */
+/*   Created: 2021/12/19 23:57:22 by elehtora          #+#    #+#             */
+/*   Updated: 2022/01/19 01:59:26 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
+#include <stdlib.h>
 
-int	main(void)
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	int	tostr;
-
-	tostr = MIN_INT + 1;
-	ft_putstrnl(ft_itoa(tostr));
-	
-	if (argc != 2)
-	{
-		ft_putstrnl("ERROR: Input an integer value.");
-		return (-1);
-	}
-	
-	ft_putstrnl(ft_itoa(ft_atoi(argv[1])));
-	return (0);
+	if (*alst == NULL)
+		return ;
+	if (*alst != NULL)
+		ft_lstdel(&((*alst)->next), del);
+	del((*alst)->content, (*alst)->content_size);
+	free(*alst);
+	*alst = NULL;
 }

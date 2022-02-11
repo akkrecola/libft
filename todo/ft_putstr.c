@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_itoa.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/24 04:39:38 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/11 13:37:34 by elehtora         ###   ########.fr       */
+/*   Created: 2022/01/31 05:28:42 by elehtora          #+#    #+#             */
+/*   Updated: 2022/01/31 05:53:31 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "libft.h"
 
-int	main(void)
+void	ft_putstr(char const *s)
 {
-	int	tostr;
-
-	tostr = MIN_INT + 1;
-	ft_putstrnl(ft_itoa(tostr));
-	
-	if (argc != 2)
-	{
-		ft_putstrnl("ERROR: Input an integer value.");
-		return (-1);
-	}
-	
-	ft_putstrnl(ft_itoa(ft_atoi(argv[1])));
-	return (0);
+	write(1, s, ft_strlen(s));
 }
