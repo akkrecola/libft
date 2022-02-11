@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 13:09:05 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/10 16:08:21 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/11 17:53:20 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,35 +21,46 @@ static int	is_whitespace(char c)
 		return (0);
 }
 
-static char	*get_tail(char const *s)
+static char	*get_tail(char *s)
 {
-	size_t	i;
+	char	*start;
+	char	*tail;
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	if (i == 0)
+	start = (char *) s;
+	while (*s != '\0')
+		s++;
+	if (s == start)
 		return ((char *)s);
-	i--;
-	while (is_whitespace(s[i]))
-		i--;
-	return ((char *)&(s[i]));
+	tail = s - 1;
+	while (is_whitespace(*tail))
+		tail--;
+	return (tail);
+}
+
+static char	*get_start(char const *s)
+{
+	char	*start;
+
+	start = (char *) s;
+	while (is_whitespace(*start))
+		start++;
+	return (start);
 }
 
 char	*ft_strtrim(char const *s)
 {
-	char	*tail;
-	char	*trimmed;
-	char	*result_ptr;
+	char		*start;
+	char const	*tail;
+	char		*trimmed;
+	char		*result_ptr;
 
-	while (is_whitespace(*s))
-		s++;
-	tail = get_tail(s);
-	trimmed = (char *) malloc(ft_strlen(s) + 1);
+	start = get_start(s);
+	tail = get_tail(start);
+	trimmed = ft_strnew(tail - start + 2);
 	if (trimmed == NULL)
 		return (NULL);
 	result_ptr = trimmed;
-	while (s != (tail + 1))
-		*(trimmed++) = *(s++);
+	while (start <= tail)
+		*(trimmed++) = *(start++);
 	return (result_ptr);
 }
