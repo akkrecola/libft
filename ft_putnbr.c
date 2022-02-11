@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 16:38:13 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/24 19:09:02 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/01/27 17:59:37 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,15 @@ static int	isdigit(int c)
 
 void	ft_putnbr(int n)
 {
-	n = (long int) n;
-	if (!isdigit(n))
-		ft_putnbr((n - (n % 10)) / 10);
-	else if (n < 0)
+	long int	ln;
+
+	ln = (long int) n;
+	if (!isdigit(ln))
+		ft_putnbr((ln - (ln % 10)) / 10);
+	else if (ln < 0)
 		write(1, "-", 1);
-	if (n < 0)
-		n *= (-1);
-	n = n % 10 + '0';
-	write(1, &n, 1);
+	if (ln < 0)
+		ln *= (-1);
+	ln = ln % 10 + '0';
+	write(1, &ln, 1);
 }

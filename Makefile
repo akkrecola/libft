@@ -6,7 +6,7 @@
 #    By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 15:27:40 by elehtora          #+#    #+#              #
-#    Updated: 2022/01/24 19:00:54 by elehtora         ###   ########.fr        #
+#    Updated: 2022/02/05 07:42:30 by elehtora         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,16 +52,18 @@ SRCS		=	ft_alphabetize.c	\
 				ft_putmem.c			\
 				ft_putmemnl.c		\
 				ft_putnbr.c			\
+				ft_putnbr_fd.c		\
 				ft_putnbrnl.c		\
 				ft_putstr.c			\
 				ft_putstr_fd.c		\
 				ft_putstrnl.c		\
-				ft_realloc.c		\
+				ft_strcat.c			\
 				ft_strchr.c			\
 				ft_strclr.c			\
 				ft_strcmp.c			\
 				ft_strcpy.c			\
 				ft_strdel.c			\
+				ft_strdup.c			\
 				ft_strequ.c			\
 				ft_striter.c		\
 				ft_striteri.c		\
@@ -69,17 +71,21 @@ SRCS		=	ft_alphabetize.c	\
 				ft_strlen.c			\
 				ft_strmap.c			\
 				ft_strmapi.c		\
+				ft_strncat.c		\
 				ft_strncmp.c		\
 				ft_strncpy.c		\
+				ft_strlcat.c		\
 				ft_strlcpy.c		\
 				ft_strnequ.c		\
 				ft_strnew.c			\
 				ft_strnewi.c		\
+				ft_strnstr.c		\
 				ft_strrchr.c		\
 				ft_strsplit.c		\
+				ft_strstr.c			\
 				ft_strsub.c			\
 				ft_strtrim.c		\
-#				ft_lstdel.c			\
+				ft_lstdel.c			\
 #				ft_lstmap.c			\
 #				ft_lstiter.c		
 

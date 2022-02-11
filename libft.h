@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:00:26 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/24 18:51:32 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/10 16:12:40 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 # define LIBFT_H
 
 /* Max integer definitions */
-# define MAX_INT 2147483647
-# define MIN_INT -2147483648
+# define INT_MAX 2147483647
+# define INT_MIN -2147483648
 
 /* Necessary (and permitted) inclusions */
 # include <string.h>
@@ -27,7 +27,6 @@ typedef struct s_list
 	size_t			content_size;
 	struct s_list	*next;
 }				t_list;
-
 
 /* Part 1 function prototypes */
 void	*ft_memset(void *s, int c, size_t n);
@@ -110,7 +109,6 @@ void	ft_putlstnl(t_list *elem);
 void	ft_putmem(char *s, size_t n);
 void	ft_putmemnl(char *s, size_t n);
 void	ft_alphabetize(void *dest, int n);
-void	*ft_realloc(void *area, size_t old_size, size_t new_size);
 t_list	*ft_lstcpyone(t_list *link);
 char	*ft_strnewi(const char *s);
 

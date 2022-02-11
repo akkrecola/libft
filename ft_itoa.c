@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 18:29:31 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/11 16:14:36 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/11 16:50:36 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static size_t	count_digs(long int ln)
 	count = 0;
 	if (ln < 0)
 		count += 1;
-	while (ln <= -9 || ln >= 9)
+	while (ln < -9 || ln > 9)
 	{
 		count++;
 		ln = (ln - ln % 10) / 10;

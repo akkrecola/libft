@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 16:38:13 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/15 17:00:31 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/01/27 18:01:32 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_putnbrnl(int n)
 {
-	ft_putstr(ft_itoa(n));
-	ft_nl();
+	ft_putnbr(n);
+	ft_putchar('\n');
 }
