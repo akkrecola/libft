@@ -6,38 +6,48 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 18:29:31 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/11 13:52:39 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/11 16:14:36 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* Doesn't handle INT_MIN (iteration done with positive) */
+static size_t	count_digs(long int ln)
+{
+	size_t	count;
+
+	count = 0;
+	if (ln < 0)
+		count += 1;
+	while (ln <= -9 || ln >= 9)
+	{
+		count++;
+		ln = (ln - ln % 10) / 10;
+	}
+	return (count + 1);
+}
 
 char	*ft_itoa(int n)
 {
 	char		*str;
-	short int	sign;
-	short int	digs;
+	size_t		digs;
 	long int	ln;
 
-	sign = 0;
 	ln = (long int) n;
+	digs = count_digs(ln);
+	str = ft_strnew((size_t) digs);
 	if (ln < 0)
 	{
-		sign = 1;
 		ln *= -1;
+		str[0] = '-';
 	}
-	digs = ft_dgtcnt(ln) + sign;
-	str = ft_strnew((size_t) digs);
-	while (ln > 9)
+	while (digs > 0)
 	{
 		digs--;
+		if (str[digs] == '-')
+			return (str);
 		str[digs] = (ln % 10) + '0';
 		ln = (ln - ln % 10) / 10;
 	}
-	str[digs - 1] = ln + '0';
-	if (sign == 1)
-		str[0] = '-';
 	return (str);
 }
