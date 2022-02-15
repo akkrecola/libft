@@ -6,7 +6,7 @@
 #    By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 15:27:40 by elehtora          #+#    #+#              #
-#    Updated: 2022/02/05 07:42:30 by elehtora         ###   ########.fr        #
+#    Updated: 2022/02/15 21:38:43 by elehtora         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -86,8 +86,8 @@ SRCS		=	ft_alphabetize.c	\
 				ft_strsub.c			\
 				ft_strtrim.c		\
 				ft_lstdel.c			\
-#				ft_lstmap.c			\
-#				ft_lstiter.c		
+				ft_lstmap.c			\
+				ft_lstiter.c		
 
 
 OBJS = $(addsuffix .o, $(basename $(SRCS)))
