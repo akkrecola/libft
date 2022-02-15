@@ -5,40 +5,74 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/16 17:56:43 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/17 12:29:57 by elehtora         ###   ########.fr       */
+/*   Created: 2022/02/15 21:23:24 by elehtora          #+#    #+#             */
+/*   Updated: 2022/02/15 21:50:18 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 #include <string.h>
-
-int	main(void)
+#define LSTSIZE 4
+/*
+static void	print(t_list *elem)
 {
-	void	*old_content;
-	void	*new_content;
-	size_t	content_size;
-	t_list	*oldlink;
-	t_list	*newlink;
+	size_t	*toprint;
 
-	content_size = 5;
-	old_content = ft_memalloc(content_size);
-	new_content = ft_memalloc(content_size + 5);
-	ft_alphabetize(new_content, content_size + 5);
-	ft_alphabetize(old_content, content_size);
-	newlink = ft_lstnew(new_content, content_size + 5);
-	oldlink = ft_lstnew(old_content, content_size);
+	toprint = elem->content;
+	ft_putnbrnl((size_t) *toprint);
+}
 
-	ft_lstadd(&oldlink, newlink);
-	ft_putmemnl(newlink->content, content_size + 5);
-//	ft_putnbrnl(newlink->content_size);
-	ft_putmemnl(newlink->next->content, content_size);
-//	ft_putnbrnl(newlink->next->content_size);
-	ft_lstdel(&newlink, ft_del);
-	if (oldlink == NULL)
-		ft_putstrnl("Old link deleted successfully.");
-	if (newlink == NULL)
-		ft_putstrnl("New link deleted successfully.");
-	// ft_putnbrnl(oldlink->content_size);
-	return (0);
+
+int	main()
+{
+	t_list	**alst;
+	size_t	i;
+	t_list	*head;
+
+	alst = (t_list **) malloc(sizeof(t_list *) * LSTSIZE + 1);
+	alst[LSTSIZE] = NULL;
+
+	i = 0;
+	while (i < LSTSIZE)
+	{
+		alst[i] = ft_lstnew(&i, sizeof(i));
+		i++;
+	}
+
+	i = 0;
+	while (i < LSTSIZE)
+	{
+		ft_lstadd(&(alst[i]), alst[i + 1]);
+		i++;
+	}
+	head = alst[i - 1];
+	
+	ft_lstiter(head, print);
+	
+}
+*/
+
+int	main()
+{
+	t_list	**alst;
+	t_list	*l1 = ft_lstnew("1", 1);
+	t_list	*l2 = ft_lstnew("2", 1);
+	t_list	*l3 = ft_lstnew("3", 1);
+	t_list	*l4 = ft_lstnew("4", 1);
+	t_list	*head;
+
+	alst = (t_list **) malloc(sizeof(t_list *) * LSTSIZE);
+	ft_lstadd(alst, l1);
+	ft_lstadd(alst, l2);
+	ft_lstadd(alst, l3);
+	ft_lstadd(alst, l4);
+
+	head = l4;
+	while (head != NULL)
+	{
+		ft_putendl("XOXO");
+		ft_putcharnl(*((char *)(head->content)));
+		head = head->next;
+	}
 }
