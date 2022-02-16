@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   test_strdup.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 16:10:57 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/31 05:58:33 by elehtora         ###   ########.fr       */
+/*   Created: 2022/01/19 16:04:25 by elehtora          #+#    #+#             */
+/*   Updated: 2022/01/19 16:29:47 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
-void	ft_putendl(char const *s)
+int	main(void)
 {
-	write(1, s, ft_strlen(s));
-	write(1, "\n", 1);
+	const char	*s;
+	char		*new;
+
+	s = "abc";
+	new = ft_strdup(s);
+	if (new == NULL)
+		ft_putstrnl("strdup returned NULL");
+	else
+		ft_putstrnl(new);
+	ft_memdel((void **)(&new));
+	if (new == NULL)
+		ft_putstrnl("Memory freed.");
+	return (0);
 }

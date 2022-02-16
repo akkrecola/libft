@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   test_strtrim.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 16:10:57 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/31 05:58:33 by elehtora         ###   ########.fr       */
+/*   Created: 2022/01/08 13:09:58 by elehtora          #+#    #+#             */
+/*   Updated: 2022/01/10 01:51:28 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
-void	ft_putendl(char const *s)
+int	main(int argc, char **argv)
 {
-	write(1, s, ft_strlen(s));
-	write(1, "\n", 1);
+	char	*trimmed;
+
+	if (argc != 2)
+	{
+		ft_putstrnl("ERROR: Input a string to be trimmed.");
+		return (-1);
+	}
+	trimmed = ft_strtrim(argv[1]);
+	if (trimmed == NULL)
+		ft_putstrnl("String memory allocation failed. (NULL returned)");
+	ft_putstrnl(trimmed);
+	return (0);
 }

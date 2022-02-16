@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   test_strnew.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 16:10:57 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/31 05:58:33 by elehtora         ###   ########.fr       */
+/*   Created: 2022/01/23 16:41:49 by elehtora          #+#    #+#             */
+/*   Updated: 2022/01/23 17:00:22 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
+#include <stdlib.h>
 
-void	ft_putendl(char const *s)
+int	main()
 {
-	write(1, s, ft_strlen(s));
-	write(1, "\n", 1);
+	char	*str;
+	size_t	i;
+	size_t	size;
+
+	i = 0;
+	size = 3;
+	str = ft_strnew(size);
+	while (i < size + 1)
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
+	ft_strdel(&str);
 }

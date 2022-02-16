@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   test_strmap.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 16:10:57 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/31 05:58:33 by elehtora         ###   ########.fr       */
+/*   Created: 2022/01/08 07:24:35 by elehtora          #+#    #+#             */
+/*   Updated: 2022/01/08 07:42:33 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
-void	ft_putendl(char const *s)
+char	ft_toupper_char(char c)
 {
-	write(1, s, ft_strlen(s));
-	write(1, "\n", 1);
+	if (ft_isalpha((int) c))
+		return (c - ('a' - 'A'));
+	else
+		return (c);
+}
+
+int		main(int argc, char **argv)
+{
+	if (argc != 2)
+	{
+		ft_putstr("ERROR: Input a string to be mapped.\n");
+		return (-1);
+	}
+	ft_putstr(ft_strmap(argv[1], ft_toupper_char));
+	return (0);
 }

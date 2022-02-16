@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   test_strjoin.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 16:10:57 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/31 05:58:33 by elehtora         ###   ########.fr       */
+/*   Created: 2021/12/24 04:50:18 by elehtora          #+#    #+#             */
+/*   Updated: 2021/12/24 05:11:40 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
-void	ft_putendl(char const *s)
+int	main(int argc, char **argv)
 {
-	write(1, s, ft_strlen(s));
-	write(1, "\n", 1);
+	if (argc != 3)
+	{
+		ft_putstr("ERROR: Input 2 strings to join.");
+		return (-1);
+	}
+	ft_putstr(ft_strjoin(argv[1], argv[2]));
+	return (0);
 }

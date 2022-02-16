@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 16:10:57 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/31 05:58:33 by elehtora         ###   ########.fr       */
+/*   Created: 2022/01/19 19:11:41 by elehtora          #+#    #+#             */
+/*   Updated: 2022/02/05 07:52:37 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
+#include <string.h>
 
-void	ft_putendl(char const *s)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	write(1, s, ft_strlen(s));
-	write(1, "\n", 1);
+	size_t	len;
+
+	len = ft_strlen(dst) + ft_strlen(src);
+	while (*dst != '\0')
+		dst++;
+	while (size-- > 0 && *src != '\0')
+		*(dst++) = *(src++);
+	*dst = '\0';
+	return (len);
 }

@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   test_putnbr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 16:10:57 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/31 05:58:33 by elehtora         ###   ########.fr       */
+/*   Created: 2021/11/11 16:41:29 by elehtora          #+#    #+#             */
+/*   Updated: 2022/01/27 18:12:28 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
+//#include <stdio.h>
 
-void	ft_putendl(char const *s)
+int	main()
 {
-	write(1, s, ft_strlen(s));
-	write(1, "\n", 1);
+	ft_putnbr(+123);
+	ft_putnbr(-42);
+	ft_putnbr(42);
+	ft_putnbr(0);
+	ft_putnbr(INT_MIN);
+	ft_putnbr(INT_MAX);
+
+	//printf("%d\n", (-11 % 10));
 }

@@ -1,20 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 16:10:57 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/31 05:58:33 by elehtora         ###   ########.fr       */
+/*   Created: 2021/11/11 16:38:13 by elehtora          #+#    #+#             */
+/*   Updated: 2022/01/27 17:59:37 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include "libft.h"
 
-void	ft_putendl(char const *s)
+static int	isdigit(int c)
 {
-	write(1, s, ft_strlen(s));
-	write(1, "\n", 1);
+	if (-9 <= c && c <= 9)
+		return (1);
+	else
+		return (0);
+}
+
+void	ft_putnbr(int n)
+{
+	long int	ln;
+
+	ln = (long int) n;
+	if (!isdigit(ln))
+		ft_putnbr((ln - (ln % 10)) / 10);
+	else if (ln < 0)
+		write(1, "-", 1);
+	if (ln < 0)
+		ln *= (-1);
+	ln = ln % 10 + '0';
+	write(1, &ln, 1);
 }

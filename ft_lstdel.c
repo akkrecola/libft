@@ -1,20 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 16:10:57 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/31 05:58:33 by elehtora         ###   ########.fr       */
+/*   Created: 2021/12/19 23:57:22 by elehtora          #+#    #+#             */
+/*   Updated: 2022/01/19 02:47:09 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
+#include <string.h>
+#include <stdlib.h>
 
-void	ft_putendl(char const *s)
+/*
+   Currently NULLs only the last pointer to link (i.e. the head), while
+   the assignment could also mean that all pointers to links should be NULLed.
+ */
+
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	write(1, s, ft_strlen(s));
-	write(1, "\n", 1);
+	t_list	*prev;
+
+	prev = *alst;
+	while (*alst)
+	{
+		*alst = (*alst)->next;
+		del(prev->content, prev->content_size);
+		free(prev);
+		prev = *alst;
+	}
+	*alst = NULL;
 }

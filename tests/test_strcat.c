@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   test_strcat.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 16:10:57 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/31 05:58:33 by elehtora         ###   ########.fr       */
+/*   Created: 2022/01/19 18:45:10 by elehtora          #+#    #+#             */
+/*   Updated: 2022/01/19 19:12:15 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
+#include <string.h>
+#define ARRSIZE 10
 
-void	ft_putendl(char const *s)
+int	main(void)
 {
-	write(1, s, ft_strlen(s));
-	write(1, "\n", 1);
+	char		*dest;
+	const char	*src = "def";
+	size_t		n;
+
+	n = ARRSIZE;
+	dest = ft_strnew(n);
+	ft_putnbr(sizeof(dest));
+	ft_memcpy(dest, "abc", 3);
+	ft_strcat(dest, src);
+	ft_putstrnl(dest);
+	ft_memdel((void **)(&dest));
+
+	return (0);
 }

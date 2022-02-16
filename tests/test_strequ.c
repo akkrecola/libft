@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   test_strequ.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 16:10:57 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/31 05:58:33 by elehtora         ###   ########.fr       */
+/*   Created: 2021/12/24 04:21:09 by elehtora          #+#    #+#             */
+/*   Updated: 2021/12/24 04:27:10 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
-void	ft_putendl(char const *s)
+int	main(int argc, char **argv)
 {
-	write(1, s, ft_strlen(s));
-	write(1, "\n", 1);
+	if (argc != 3)
+	{
+		ft_putstr("ERROR: Input two strings as parameters.");
+		return (-1);
+	}
+	ft_putnbr(ft_strequ(argv[1], argv[2]));
+	return (0);
 }

@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   test_strrchr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 16:10:57 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/31 05:58:33 by elehtora         ###   ########.fr       */
+/*   Created: 2022/01/08 06:33:15 by elehtora          #+#    #+#             */
+/*   Updated: 2022/01/08 06:55:17 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
-void	ft_putendl(char const *s)
+int	main(int argc, char **argv)
 {
-	write(1, s, ft_strlen(s));
-	write(1, "\n", 1);
+	if (argc != 3)
+	{
+		ft_putstr("ERROR: Input a string and a char to inversely searched.\n");
+		return (-1);
+	}
+	if (ft_strrchr(argv[1], *(argv[2])) == NULL)
+		ft_putstr("Function returned NULL.\n");
+	else
+		ft_putstr(ft_strrchr(argv[1], *(argv[2])));
+	return (0);
 }

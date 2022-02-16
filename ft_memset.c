@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 16:10:57 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/31 05:58:33 by elehtora         ###   ########.fr       */
+/*   Created: 2021/11/11 17:03:39 by elehtora          #+#    #+#             */
+/*   Updated: 2022/01/24 13:54:28 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include "libft.h"
+#include <string.h>
 
-void	ft_putendl(char const *s)
+/* Sets a maximum of n bytes from memory area s to constant byte c. */
+
+void	*ft_memset(void *s, int c, size_t n)
 {
-	write(1, s, ft_strlen(s));
-	write(1, "\n", 1);
+	while (n-- > 0)
+		((char *)s)[n] = c;
+	return (s);
 }

@@ -1,20 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   test_putstr_old.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 16:10:57 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/31 05:58:33 by elehtora         ###   ########.fr       */
+/*   Created: 2022/01/31 05:31:26 by elehtora          #+#    #+#             */
+/*   Updated: 2022/01/31 05:47:28 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
+#include <string.h>
+#include <unistd.h>
+#define	SSIZE 2000000
 
-void	ft_putendl(char const *s)
+void	ft_putstr_old(char const *s)
 {
-	write(1, s, ft_strlen(s));
-	write(1, "\n", 1);
+	while (*s != '\0')
+	{
+		write(1, s, 1);
+		s++;
+	}
+
+}
+
+int	main(void)
+{
+	char	s[SSIZE];
+
+	ft_memset(s, 'X', SSIZE);
+	s[SSIZE - 1] = '\0';
+	ft_putstr_old(s);
+	return (0);
 }

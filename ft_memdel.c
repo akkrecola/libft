@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 16:10:57 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/31 05:58:33 by elehtora         ###   ########.fr       */
+/*   Created: 2021/11/11 18:47:41 by elehtora          #+#    #+#             */
+/*   Updated: 2021/12/01 03:52:55 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include "libft.h"
+#include <stdlib.h>
+#include <string.h>
 
-void	ft_putendl(char const *s)
+/* Frees the memory (area) pointed to by ap, then 'forgets'
+   the initial pointer by setting it to NULL. */
+
+void	ft_memdel(void **ap)
 {
-	write(1, s, ft_strlen(s));
-	write(1, "\n", 1);
+	free(*ap);
+	*ap = NULL;
 }

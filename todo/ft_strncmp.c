@@ -1,20 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 16:10:57 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/31 05:58:33 by elehtora         ###   ########.fr       */
+/*   Created: 2021/11/05 02:24:10 by elehtora          #+#    #+#             */
+/*   Updated: 2021/11/05 02:30:41 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include "libft.h"
+#include <string.h>
 
-void	ft_putendl(char const *s)
+int	ft_strncmp(char *s1, char *s2, size_t n)
 {
-	write(1, s, ft_strlen(s));
-	write(1, "\n", 1);
+	int	i;
+
+	i = 0;
+	while (n - i > 0 && s1[i] != '\0' && s2[i] != '\0')
+	{
+		if (s1[i] > s2[i])
+			return (1);
+		if (s1[i] < s2[i])
+			return (-1);
+		i++;
+	}
+	if (s2[i] == '\0' && s1[i] != '\0')
+		return (1);
+	if (s1[i] == '\0' && s2[i] != '\0')
+		return (-1);
+	return (0);
 }

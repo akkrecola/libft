@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   test_dgtcnt.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 16:10:57 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/31 05:58:33 by elehtora         ###   ########.fr       */
+/*   Created: 2021/11/24 02:54:22 by elehtora          #+#    #+#             */
+/*   Updated: 2021/11/24 03:08:41 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
+#include <stdio.h>
 
-void	ft_putendl(char const *s)
+int	main(int argc, char **argv)
 {
-	write(1, s, ft_strlen(s));
-	write(1, "\n", 1);
+	int	nb;
+
+	if (argc == 1)
+		ft_putstr("Please input an integer value.");
+	if (argc > 2)
+		ft_putstr("Too many arguments; use only one.");
+	nb = ft_atoi(argv[1]);
+	printf("Input %d has %d digits.\n", nb, ft_dgtcnt(nb));
+
+	return (0);
 }
+

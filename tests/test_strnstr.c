@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   test_strnstr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 16:10:57 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/31 05:58:33 by elehtora         ###   ########.fr       */
+/*   Created: 2022/01/19 15:35:20 by elehtora          #+#    #+#             */
+/*   Updated: 2022/01/20 11:05:26 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
+#include <string.h>
+#define LEN 4
 
-void	ft_putendl(char const *s)
+int	main(void)
 {
-	write(1, s, ft_strlen(s));
-	write(1, "\n", 1);
+	const char	*big = "abcdef";
+	const char	*little = "abcd";
+	size_t		len;
+	char		*result;
+
+	len = LEN;
+	result = ft_strnstr(big, little, len);
+	if (result != NULL)
+		ft_putstrnl(result);
+	else
+		ft_putstrnl("ft_strstr returned NULL, substring not found.");
+	return (0);
 }

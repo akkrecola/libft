@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   test_isprint.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 16:10:57 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/31 05:58:33 by elehtora         ###   ########.fr       */
+/*   Created: 2021/11/03 17:50:28 by elehtora          #+#    #+#             */
+/*   Updated: 2021/11/03 19:06:08 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
+#include <stdio.h>
 
-void	ft_putendl(char const *s)
+int	 main(int argc, char **argv)
 {
-	write(1, s, ft_strlen(s));
-	write(1, "\n", 1);
+	char c;
+
+	if (argc != 2)
+		return (-1);
+
+	c = argv[1][0];
+	if (ft_isprint(c) == 1)
+		printf("Input %c print\tTRUE", c);
+	if (ft_isprint(c) == 0)
+		printf("Input %c print\tFALSE", c);
+	return (0);
 }

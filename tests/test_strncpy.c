@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   test_strncpy.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 16:10:57 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/31 05:58:33 by elehtora         ###   ########.fr       */
+/*   Created: 2022/01/08 11:27:04 by elehtora          #+#    #+#             */
+/*   Updated: 2022/01/08 11:41:17 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
-void	ft_putendl(char const *s)
+int	main(void)
 {
-	write(1, s, ft_strlen(s));
-	write(1, "\n", 1);
+	char		*dest;
+	const char	*src;
+
+	dest = ft_strnew(20);
+	src = "semmosta";
+	ft_strncpy(dest, src, 6);
+	ft_putstr(dest);
+	return (0);
 }

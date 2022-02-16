@@ -1,35 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   test_strncat.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 02:24:10 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/05 04:28:57 by elehtora         ###   ########.fr       */
+/*   Created: 2022/01/19 18:45:10 by elehtora          #+#    #+#             */
+/*   Updated: 2022/01/28 16:31:50 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <string.h>
+#define DESTSIZE 2
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	main(int argc, char **argv)
 {
-	int	i;
+	char		*dest;
+	const char	*src;
+	size_t		n;
 
-	i = 0;
-	while (n - i > 0 && s1[i] != '\0' && s2[i] != '\0')
+	if (argc != 4)
 	{
-		if (s1[i] > s2[i])
-			return (1);
-		if (s1[i] < s2[i])
-			return (-1);
-		i++;
-	}
-	if (n - i <= 0)
-		return (0);
-	if (s2[i] == '\0' && s1[i] != '\0')
-		return (1);
-	if (s1[i] == '\0' && s2[i] != '\0')
+		ft_putendl("Input: dest and src strings to concatenate, n chars to cat.");
 		return (-1);
+	}
+
+	n = ft_atoi(argv[3]);
+	dest = ft_strnewi(argv[1]);
+	src = argv[2];
+	ft_strncat(dest, src, n);
+	ft_putstrnl(dest);
+	ft_strdel(&dest);
+	if (dest != NULL)
+		ft_putstrnl("Dest not freed.");
+	else
+		ft_putstrnl("Dest freed.");
+
 	return (0);
 }

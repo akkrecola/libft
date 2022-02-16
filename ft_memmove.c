@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 16:10:57 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/31 05:58:33 by elehtora         ###   ########.fr       */
+/*   Created: 2022/01/14 11:56:25 by elehtora          #+#    #+#             */
+/*   Updated: 2022/01/15 12:41:01 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
+#include <string.h>
 
-void	ft_putendl(char const *s)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	write(1, s, ft_strlen(s));
-	write(1, "\n", 1);
+	void	*temp;
+
+	temp = ft_memalloc(n);
+	ft_memcpy(temp, src, n);
+	ft_memcpy(dest, temp, n);
+	ft_memdel(&temp);
+	return (dest);
 }

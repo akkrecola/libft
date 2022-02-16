@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   test_strcpy.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 16:10:57 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/31 05:58:33 by elehtora         ###   ########.fr       */
+/*   Created: 2021/12/24 05:22:32 by elehtora          #+#    #+#             */
+/*   Updated: 2021/12/24 05:40:04 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
+#include <stdlib.h>
 
-void	ft_putendl(char const *s)
+int	main(int argc, char **argv)
 {
-	write(1, s, ft_strlen(s));
-	write(1, "\n", 1);
+	char	*dest;
+
+	if (argc != 2)
+	{
+		ft_putstr("ERROR: Input 1 string to copy.");
+		return (-1);
+	}
+	dest = ft_strnew(ft_strlen(argv[1]) + 1);
+	ft_putnbr(ft_strlen(argv[1]) + 1);
+	ft_putstr(ft_strcpy(dest, argv[1]));
+	return (0);
 }

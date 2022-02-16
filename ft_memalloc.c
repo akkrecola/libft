@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 16:10:57 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/31 05:58:33 by elehtora         ###   ########.fr       */
+/*   Created: 2021/11/11 18:31:06 by elehtora          #+#    #+#             */
+/*   Updated: 2022/01/11 13:54:19 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 #include "libft.h"
 
-void	ft_putendl(char const *s)
+/*
+   Allocates and returns a fresh memory area. Memory allocated is initialized
+   to 0. Return NULL on failed allocation.
+ */
+
+void	*ft_memalloc(size_t size)
 {
-	write(1, s, ft_strlen(s));
-	write(1, "\n", 1);
+	void	*area;
+
+	area = (char *) malloc(size);
+	if (area == NULL)
+		return (NULL);
+	ft_bzero(area, size);
+	return (area);
 }

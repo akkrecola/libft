@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 16:10:57 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/31 05:58:33 by elehtora         ###   ########.fr       */
+/*   Created: 2021/12/24 12:41:34 by elehtora          #+#    #+#             */
+/*   Updated: 2021/12/25 01:52:59 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
+#include <stdlib.h>
 
-void	ft_putendl(char const *s)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	write(1, s, ft_strlen(s));
-	write(1, "\n", 1);
+	char	*subs;
+	int		i;
+
+	subs = (char *) malloc(len + 1);
+	i = 0;
+	while (len-- > 0)
+		subs[i++] = s[start++];
+	return (subs);
 }

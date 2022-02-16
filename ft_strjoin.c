@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 16:10:57 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/31 05:58:33 by elehtora         ###   ########.fr       */
+/*   Created: 2021/12/22 22:18:16 by elehtora          #+#    #+#             */
+/*   Updated: 2021/12/24 05:47:28 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
-void	ft_putendl(char const *s)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	write(1, s, ft_strlen(s));
-	write(1, "\n", 1);
+	char		*newstr;
+	short int	len1;
+	short int	len2;
+
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	newstr = ft_strnew(len1 + len2 + 1);
+	ft_strcpy(newstr, s1);
+	ft_strcpy((newstr + len1), s2);
+	return (newstr);
 }

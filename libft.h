@@ -6,15 +6,19 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:00:26 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/24 02:15:25 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/16 21:19:30 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+/* Max integer definitions */
+# define INT_MAX 2147483647
+# define INT_MIN -2147483648
+
 /* Necessary (and permitted) inclusions */
-#include <string.h>
+# include <string.h>
 
 /* Linked list typedef */
 typedef struct s_list
@@ -28,21 +32,23 @@ typedef struct s_list
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
-void	*ft_memccpy(void *dest, const void *src, size_t n);
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
+void	*ft_memrchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t	ft_strlen(const char *s);
 char	*ft_strdup(const char *s);
 char	*ft_strcpy(char *dest, const char *src);
 char	*ft_strncpy(char *dest, const char *src, size_t n);
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 char	*ft_strcat(char *dest, const char *src);
 char	*ft_strncat(char *dest, const char *src, size_t n);
-size_t	ft_strlcat(char *dest, const char *src, size_t size);
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strstr(const char *haystack, const char *needle);
-char	*strnstr(const char *s1, const char *s2, size_t len);
+char	*ft_strnstr(const char *s1, const char *s2, size_t len);
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_islower(int c);
@@ -55,9 +61,6 @@ int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_atoi(const char *nptr);
-void	ft_putchar(char c);
-void	ft_putnbr(int n);
-void	ft_putstr(char const *s);
 
 /* Part 2 function prototypes */
 void	*ft_memalloc(size_t size);
@@ -76,6 +79,10 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s);
 char	**ft_strsplit(char const *s, char c);
 char	*ft_itoa(int n);
+void	ft_putchar(char c);
+void	ft_putnbr(int n);
+void	ft_putstr(char const *s);
+void	ft_putendl(char const *s);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char const *s, int fd);
 void	ft_putendl_fd(char const *s, int fd);
@@ -89,5 +96,21 @@ void	ft_lstadd(t_list **alst, t_list *new);
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int		bcmp(const void *s1, const void *s2, size_t n);
+
+/* Mandatory helper function for list testing */
+void	ft_del(void *content, size_t content_size);
+
+/* Voluntary functions (for testing) */
+int		ft_dgtcnt(int n);
+void	ft_nl(void);
+void	ft_putstrnl(char const *s);
+void	ft_putcharnl(char c);
+void	ft_putnbrnl(int n);
+void	ft_putlstnl(t_list *elem);
+void	ft_putmem(char *s, size_t n);
+void	ft_putmemnl(char *s, size_t n);
+void	ft_alphabetize(void *dest, int n);
+t_list	*ft_lstcpyone(t_list *link);
+char	*ft_strnewi(const char *s);
 
 #endif

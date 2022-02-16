@@ -1,20 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 16:10:57 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/31 05:58:33 by elehtora         ###   ########.fr       */
+/*   Created: 2022/01/08 07:03:19 by elehtora          #+#    #+#             */
+/*   Updated: 2022/01/08 07:39:31 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
-void	ft_putendl(char const *s)
+/*
+	Applies the function f to all chars of string s, then returns a fresh
+	string with modifications by function f.
+*/
+
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	write(1, s, ft_strlen(s));
-	write(1, "\n", 1);
+	char	*new_str;
+	int		i;
+
+	new_str = ft_strnew(ft_strlen(s));
+	if (new_str == NULL)
+		return (NULL);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		new_str[i] = f(s[i]);
+		i++;
+	}
+	return (new_str);
 }
