@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 12:55:27 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/08 13:05:54 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/17 01:44:21 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ void	imitate(char *s)
 
 int	main(void)
 {
-	char	str[] = "persepaska";
+	char	str[] = "it be like that";
 
 	ft_striter(str, imitate);
-	ft_putstr(str);
+	ft_putendl(str);
 	return (0);
 }
