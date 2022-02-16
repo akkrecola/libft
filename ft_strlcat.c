@@ -6,27 +6,37 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 19:11:41 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/15 22:07:41 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/16 04:21:41 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <string.h>
 
+static char	*get_tail(char *s, size_t size)
+{
+	while (*s != '\0' && size > 0)
+	{
+		s++;
+		size--;
+	}
+	if (size == 0)
+		return (NULL);
+	else
+		return (s);
+}
+
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	len;
-	size_t	i;
+	size_t	dstlen;
+	size_t	srclen;
 
-	len = ft_strlen(dst) + ft_strlen(src);
-	while (*dst != '\0' && size > 0)
-		dst++;
-	i = 0;
-	while (i++ < size && *src != '\0')
-		*(dst++) = *(src++);
-	if (i == size && *src != '\0')
-		len = size;
-	else
-		*dst = '\0';
-	return (len);
+	dstlen = ft_strlen(dst);
+	srclen = ft_strlen(src);
+	dst = get_tail(dst, size);
+	if (!dst)
+		return (srclen + size);
+	ft_strncpy(dst, src, (size - dstlen - 1));
+	dst[size - dstlen - 1] = '\0';
+	return (dstlen + srclen);
 }
