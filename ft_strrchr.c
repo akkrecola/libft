@@ -6,11 +6,10 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 19:27:40 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/08 06:42:32 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/17 06:59:34 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)

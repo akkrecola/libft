@@ -6,11 +6,12 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 19:24:30 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/20 19:32:53 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/17 06:35:48 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <string.h>
 
 void	ft_strdel(char **as)
 {

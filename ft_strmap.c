@@ -6,15 +6,15 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 07:03:19 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/08 07:39:31 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/17 06:45:28 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-	Applies the function f to all chars of string s, then returns a fresh
-	string with modifications by function f.
+** Applies the function f to all chars of string s, then returns a fresh
+** string with modifications by function f.
 */
 
 char	*ft_strmap(char const *s, char (*f)(char))
