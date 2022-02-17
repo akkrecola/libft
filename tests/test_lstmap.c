@@ -6,45 +6,49 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 23:07:34 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/22 18:28:38 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/17 05:03:07 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
 
 t_list	*kindify(t_list *elem)
 {
-	size_t	new_size;
-	char	*please;
+	t_list	*new_list;
+	char	*please = ", please.";
 
-	new_size = ft_strlen(", please.") + ft_strlen((const char *)elem->content);
-	please = ft_strnew(new_size);
-	free(elem->content);
-	elem->content_size = (new_size + 1);
-	elem->content = (char *)please;
-	return (elem);
+	new_list = ft_lstnew(ft_strjoin(elem->content, please), elem->content_size + ft_strlen(please));
+	return (new_list);
+}
+
+void	print_list_contents(t_list *head)
+{
+	ft_putendl(head->content);
 }
 
 int	main(void)
 {
-	t_list		*l1;
-	t_list		*l2;
-	t_list		*l3;
-	const char	*content = "Persepone";
-	t_list		*newlist_head;
+	t_list		*oldlist;
+	t_list		*newlist;
 
-	l1 = ft_lstnew(content, ft_strlen(content));
-	l2 = ft_lstnew(content, ft_strlen(content));
-	l3 = ft_lstnew(content, ft_strlen(content));
 
-	ft_lstadd(&l3, l2);
-	ft_lstadd(&l2, l1);
+	oldlist = NULL;
+	ft_lstadd(&oldlist, ft_lstnew("Sleep", strlen("Sleep") + 1));
+	ft_lstadd(&oldlist, ft_lstnew("Food", strlen("Sleep") + 1));
+	ft_lstadd(&oldlist, ft_lstnew("A gallon of coffee", strlen("A gallon of coffee") + 1));
 
-	newlist_head = ft_lstmap(l1, kindify);
-	assert(l1 != newlist_head);
+	newlist = ft_lstmap(oldlist, &kindify);
+
+	assert(oldlist != newlist);
+
+	ft_putendl("The initial list:");
+	ft_lstiter(oldlist, &print_list_contents);
+	ft_putendl("*************");
+	ft_putendl("The new list:");
+	ft_lstiter(newlist, &print_list_contents);
+
 	return (0);
 }
 

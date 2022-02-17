@@ -6,16 +6,16 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 11:57:14 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/13 01:29:46 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/17 01:11:15 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-   Writes the lowercase alphabet up to n characters into memory,
-   and outputs the characters written.
- */
+** Writes the lowercase alphabet up to n characters into memory,
+** and outputs the characters written.
+*/
 
 void	ft_alphabetize(void *dest, int n)
 {
