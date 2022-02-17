@@ -6,24 +6,24 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 13:09:58 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/10 01:51:28 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/17 07:27:39 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main(int argc, char **argv)
+int	main(void)
 {
-	char	*trimmed;
+	const char	*s = " abc ";
+	char		*trimmed;
+	size_t		len;
 
-	if (argc != 2)
-	{
-		ft_putstrnl("ERROR: Input a string to be trimmed.");
-		return (-1);
-	}
-	trimmed = ft_strtrim(argv[1]);
+	len = strlen(s);
+	trimmed = ft_strtrim(s);
 	if (trimmed == NULL)
 		ft_putstrnl("String memory allocation failed. (NULL returned)");
-	ft_putstrnl(trimmed);
+	ft_putendl(s);
+//	ft_putnbrnl(len);
+	ft_putmemnl(trimmed, len);
 	return (0);
 }
