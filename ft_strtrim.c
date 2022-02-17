@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 13:09:05 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/17 07:04:18 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/17 07:33:18 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char	*ft_strtrim(char const *s)
 
 	start = get_start(s);
 	tail = get_tail(start);
-	trimmed = ft_strnew(tail - start + 2);
+	trimmed = ft_strnew(tail - start + 1);
 	if (trimmed == NULL)
 		return (NULL);
 	result_ptr = trimmed;
