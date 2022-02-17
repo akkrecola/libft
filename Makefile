@@ -6,7 +6,7 @@
 #    By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 15:27:40 by elehtora          #+#    #+#              #
-#    Updated: 2022/02/15 21:38:43 by elehtora         ###   ########.fr        #
+#    Updated: 2022/02/17 05:55:01 by elehtora         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,13 +26,14 @@ SRCS		=	ft_alphabetize.c	\
 				ft_islower.c		\
 				ft_isprint.c		\
 				ft_isupper.c		\
-				ft_tolower.c		\
-				ft_toupper.c		\
 				ft_itoa.c			\
 				ft_lstadd.c			\
-				ft_lstdelone.c		\
-				ft_lstnew.c			\
 				ft_lstcpyone.c		\
+				ft_lstdel.c			\
+				ft_lstdelone.c		\
+				ft_lstiter.c		\
+				ft_lstmap.c			\
+				ft_lstnew.c			\
 				ft_memalloc.c		\
 				ft_memccpy.c		\
 				ft_memchr.c			\
@@ -85,9 +86,8 @@ SRCS		=	ft_alphabetize.c	\
 				ft_strstr.c			\
 				ft_strsub.c			\
 				ft_strtrim.c		\
-				ft_lstdel.c			\
-				ft_lstmap.c			\
-				ft_lstiter.c		
+				ft_tolower.c		\
+				ft_toupper.c
 
 
 OBJS = $(addsuffix .o, $(basename $(SRCS)))
@@ -113,20 +113,3 @@ fclean : clean
 	@$(RM) $(NAME)
 
 re : fclean all
-
-###############
-### TESTING ###
-###############
-
-# TEST VARIABLES
-
-TESTDIR=tests
-TESTS=$(wildcard $(TESTDIR)/*.c)
-# TESTBIN=
-TESTFLAGS=-lcriterion
-
-# TEST RULES
-
-so:
-	gcc -c -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
