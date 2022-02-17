@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 13:58:49 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/23 23:42:11 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/17 01:15:27 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,6 @@ static const char	*set_sign(const char *nptr, int *sign)
 	}
 	return (nptr);
 }
-
-/*
-Integer overflow or underflow isn't handled on the actual atoi, therefore
-they're not handled here either. Atoi has a non-documented return of -1 when
-the count of digits passes 19, so this behaviour is implemented.
-*/
 
 int	ft_atoi(const char *nptr)
 {

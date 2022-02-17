@@ -6,15 +6,16 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 02:44:17 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/24 04:04:34 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/17 01:22:28 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-   Assumes the input to be a valid integer, i.e. no less than 1 in length.
-   Returns the count of digits or -1 on error. Inputs out of integer range
-   result in unpredictable behaviour.
- */
+** Counts and returns the number of digits in n.
+**
+** Assumes the input to be a valid integer, i.e. no less than 1 in length.
+** Inputs out of integer range result in undefined behaviour.
+*/
 
 int	ft_dgtcnt(int n)
 {
