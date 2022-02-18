@@ -6,11 +6,12 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 13:09:05 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/17 07:33:18 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/11 17:53:20 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 static int	is_whitespace(char c)
 {
@@ -55,7 +56,7 @@ char	*ft_strtrim(char const *s)
 
 	start = get_start(s);
 	tail = get_tail(start);
-	trimmed = ft_strnew(tail - start + 1);
+	trimmed = ft_strnew(tail - start + 2);
 	if (trimmed == NULL)
 		return (NULL);
 	result_ptr = trimmed;
