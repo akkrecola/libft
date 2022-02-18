@@ -6,7 +6,7 @@
 #    By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 15:27:40 by elehtora          #+#    #+#              #
-#    Updated: 2022/02/18 03:44:31 by elehtora         ###   ########.fr        #
+#    Updated: 2022/02/18 16:28:05 by elehtora         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -97,7 +97,7 @@ OUT=*.out
 
 # RULES
 
-all : $(NAME) clean
+all : $(NAME)
 
 $(NAME) : $(SRCS)
 	@$(CC) $(CFLAGS) $(SRCS)
