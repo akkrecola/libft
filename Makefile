@@ -6,7 +6,7 @@
 #    By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 15:27:40 by elehtora          #+#    #+#              #
-#    Updated: 2022/02/18 03:12:53 by elehtora         ###   ########.fr        #
+#    Updated: 2022/02/18 03:44:31 by elehtora         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,6 @@ SRCS		=	ft_alphabetize.c	\
 				ft_putcharnl.c		\
 				ft_putendl.c		\
 				ft_putendl_fd.c		\
-				ft_putlstnl.c		\
 				ft_putmem.c			\
 				ft_putmemnl.c		\
 				ft_putnbr.c			\
