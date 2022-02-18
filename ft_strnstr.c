@@ -6,12 +6,11 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 15:16:12 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/17 06:57:04 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/18 04:04:41 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 static int	strequ_noterm(char const *s1, char const *s2, size_t len)
 {

@@ -6,12 +6,11 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 16:50:09 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/18 02:46:38 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/18 04:06:20 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <string.h>
 #include "libft.h"
 
 static char	*add_substr(char const *s, char c)
