@@ -6,11 +6,9 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 17:44:28 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/05 02:29:31 by elehtora         ###   ########.fr       */
+/*   Updated: 2021/11/24 02:31:28 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isdigit(int c)
 {

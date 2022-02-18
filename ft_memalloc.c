@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 18:31:06 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/11 13:54:19 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/17 06:04:47 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #include "libft.h"
 
 /*
-   Allocates and returns a fresh memory area. Memory allocated is initialized
-   to 0. Return NULL on failed allocation.
- */
+** Allocates and returns a fresh memory area. Memory allocated is initialized
+** to 0. Return NULL on failed allocation.
+*/
 
 void	*ft_memalloc(size_t size)
 {

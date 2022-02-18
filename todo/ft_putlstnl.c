@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 20:14:03 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/20 20:20:20 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/10 16:13:19 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 void	ft_putlstnl(t_list *elem)
 {
 	if (!elem)
-		return;
+		return ;
 	if (elem->content)
 		ft_putstrnl(elem->content);
 	else

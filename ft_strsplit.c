@@ -6,31 +6,27 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 16:50:09 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/15 16:54:00 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/18 04:06:20 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <string.h>
 #include "libft.h"
 
-static char	*add_substr(char const **s, char c)
+static char	*add_substr(char const *s, char c)
 {
-	char	*start;
-	char	*tail;
-	char	*substr;
-	size_t	len;
+	char const	*start;
+	char const	*tail;
+	char		*substr;
 
-	start = (char *) *s;
-	while (**s != c && **s != '\0')
-		(*s)++;
-	tail = (char *) *s;
-	len = tail - start;
-	substr = (char *) malloc(len + 1);
+	start = (char *) s;
+	while (*s != c && *s != '\0')
+		s++;
+	tail = (char *) s;
+	substr = ft_strnew(tail - start);
 	if (!substr)
 		return (NULL);
-	ft_strncpy(substr, start, len);
-	substr[len] = '\0';
+	ft_strncpy(substr, start, (tail - start));
 	return (substr);
 }
 
@@ -68,11 +64,15 @@ char	**ft_strsplit(char const *s, char c)
 		while (*s == c)
 			s++;
 		if (*s == '\0')
-			return (str_array);
-		str_array[i] = add_substr(&s, c);
+			break ;
+		str_array[i] = add_substr(s, c);
 		if (str_array[i] == NULL)
 			return (NULL);
 		i++;
+		while (*s != c && *s != '\0')
+			s++;
+		if (*s == '\0')
+			break ;
 	}
 	str_array[i] = 0;
 	return (str_array);
