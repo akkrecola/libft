@@ -6,13 +6,13 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 02:24:51 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/11 16:00:41 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/19 14:30:31 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-size_t	ft_strlen(char *s)
+size_t	ft_strlen(const char *s)
 {
 	size_t	len;
 

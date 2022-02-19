@@ -6,13 +6,13 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 19:01:54 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/05 02:29:48 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/19 16:35:39 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
-	if (32 <= c && c <= 126)
+	if (040 <= (unsigned char) c && (unsigned char) c <= 0176)
 		return (1);
 	else
 		return (0);
