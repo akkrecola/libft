@@ -6,20 +6,11 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 13:58:49 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/19 16:48:21 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/19 23:51:38 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	is_digit(char c)
-{
-	c -= '0';
-	if (0 <= c && c <= 9)
-		return (1);
-	else
-		return (0);
-}
 
 static int	is_whitespace(char c)
 {
@@ -38,7 +29,7 @@ static const char	*skip_whitespace(const char *str)
 
 static const char	*set_sign(const char *str, int *sign)
 {
-	if ((*str == '+' || *str == '-') && is_digit(*(str + 1)))
+	if ((*str == '+' || *str == '-') && ft_isdigit(*(str + 1)))
 	{
 		if (*str == '-')
 			*sign = -1;
@@ -51,23 +42,16 @@ int	ft_atoi(const char *str)
 {
 	int	sign;
 	int	digit;
-	int	collector;
-	int	i;
+	int	result;
 
 	str = skip_whitespace(str);
 	sign = 1;
 	str = set_sign(str, &sign);
-	if (!sign)
-		return (0);
-	collector = 0;
-	i = 0;
-	while (is_digit(str[i]))
+	result = 0;
+	while (ft_isdigit(*str))
 	{
-		if (i > 18)
-			return (-1);
-		digit = str[i] - '0';
-		collector = collector * 10 + digit;
-		i++;
+		digit = *(str++) - '0';
+		result = result * 10 + digit;
 	}
-	return (sign * collector);
+	return (sign * result);
 }
