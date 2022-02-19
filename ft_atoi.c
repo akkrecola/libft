@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 13:58:49 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/19 16:37:57 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/19 16:48:21 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,15 @@ static const char	*skip_whitespace(const char *str)
 	return (str);
 }
 
-static const char	*set_sign(const char *nptr, int *sign)
+static const char	*set_sign(const char *str, int *sign)
 {
-	if ((*nptr == '+' || *nptr == '-') && is_digit(*(nptr + 1)))
+	if ((*str == '+' || *str == '-') && is_digit(*(str + 1)))
 	{
-		if (*nptr == '-')
+		if (*str == '-')
 			*sign = -1;
-		nptr++;
+		str++;
 	}
-	return (nptr);
+	return (str);
 }
 
 int	ft_atoi(const char *str)
@@ -54,18 +54,18 @@ int	ft_atoi(const char *str)
 	int	collector;
 	int	i;
 
-	nptr = skip_whitespace(nptr);
+	str = skip_whitespace(str);
 	sign = 1;
-	nptr = set_sign(nptr, &sign);
+	str = set_sign(str, &sign);
 	if (!sign)
 		return (0);
 	collector = 0;
 	i = 0;
-	while (is_digit(nptr[i]))
+	while (is_digit(str[i]))
 	{
 		if (i > 18)
 			return (-1);
-		digit = nptr[i] - '0';
+		digit = str[i] - '0';
 		collector = collector * 10 + digit;
 		i++;
 	}
