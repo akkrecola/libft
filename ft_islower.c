@@ -6,13 +6,13 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:22:47 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/19 16:24:57 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/19 21:35:26 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_islower(int c)
 {
-	if ('a' <= (unsigned char) c && (unsigned char) c <= 'z')
+	if ('a' <= c && c <= 'z')
 		return (1);
 	else
 		return (0);

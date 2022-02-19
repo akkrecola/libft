@@ -6,7 +6,7 @@
 #    By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 15:27:40 by elehtora          #+#    #+#              #
-#    Updated: 2022/02/19 16:45:36 by elehtora         ###   ########.fr        #
+#    Updated: 2022/02/19 21:38:13 by elehtora         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -96,9 +96,11 @@ LIB=ar rc
 RM=/bin/rm -f
 OUT=*.out
 
+.PHONY: all $(NAME) clean fclean re
+
 # RULES
 
-all : $(NAME) clean
+all : $(NAME)
 
 $(NAME) : $(SRCS)
 	@$(CC) $(CFLAGS) $(SRCS)
@@ -111,20 +113,3 @@ fclean : clean
 	@$(RM) $(NAME)
 
 re : fclean all
-
-###############
-### TESTING ###
-###############
-
-# TEST VARIABLES
-
-TESTDIR=tests
-TESTS=$(wildcard $(TESTDIR)/*.c)
-# TESTBIN=
-TESTFLAGS=-lcriterion
-
-# TEST RULES
-
-so:
-	gcc -c -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)

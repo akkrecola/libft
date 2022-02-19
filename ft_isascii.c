@@ -6,13 +6,13 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:49:03 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/19 16:30:38 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/19 22:10:48 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isascii(int c)
 {
-	if (0 <= (unsigned char) c && (unsigned char) c <= 127)
+	if (0 <= c && c <= 127)
 		return (1);
 	else
 		return (0);

@@ -6,13 +6,13 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:53:38 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/19 16:27:18 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/19 21:34:38 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isupper(int c)
 {
-	if ('A' <= (unsigned char) c && (unsigned char) c <= 'Z')
+	if ('A' <= c && c <= 'Z')
 		return (1);
 	else
 		return (0);
