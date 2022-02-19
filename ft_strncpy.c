@@ -6,26 +6,26 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 11:18:22 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/17 06:48:34 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/19 14:55:40 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-char	*ft_strncpy(char *dest, const char *src, size_t n)
+char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	size_t	i;
+	size_t	srclen;
 
-	i = 0;
-	while (src[i] != '\0' && i < n)
+	srclen = ft_strlen(src);
+	if (srclen < len)
 	{
-		dest[i] = src[i];
-		i++;
+		ft_strcpy(dst, src);
+		ft_memset(dst + srclen, '\0', len - srclen);
 	}
-	while (i < n)
+	else
 	{
-		dest[i] = '\0';
-		i++;
+		while (len-- > 0)
+			*(dst++) = *(src++);
 	}
-	return (dest);
+	return (dst);
 }

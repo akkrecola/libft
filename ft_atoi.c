@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 13:58:49 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/17 01:15:27 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/19 16:37:57 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static const char	*set_sign(const char *nptr, int *sign)
 	return (nptr);
 }
 
-int	ft_atoi(const char *nptr)
+int	ft_atoi(const char *str)
 {
 	int	sign;
 	int	digit;

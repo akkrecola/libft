@@ -6,19 +6,19 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 11:56:25 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/17 06:12:50 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/19 14:24:22 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	void	*temp;
 
-	temp = ft_memalloc(n);
-	ft_memcpy(temp, src, n);
-	ft_memcpy(dest, temp, n);
+	temp = ft_memalloc(len);
+	ft_memcpy(temp, src, len);
+	ft_memcpy(dst, temp, len);
 	ft_memdel(&temp);
-	return (dest);
+	return (dst);
 }

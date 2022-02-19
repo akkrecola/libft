@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 17:03:39 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/18 16:52:34 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/19 14:49:01 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@
 void	*ft_memset(void *b, int c, size_t len)
 {
 	while (len-- > 0)
-		((char *) b)[len] = c;
+		((unsigned char *) b)[len] = (unsigned char) c;
 	return (b);
 }
