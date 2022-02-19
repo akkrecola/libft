@@ -6,11 +6,11 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 11:18:22 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/19 14:55:40 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/19 16:55:24 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strncpy(char *dst, const char *src, size_t len)
 {

@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 19:11:41 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/19 15:29:13 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/19 16:56:33 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 static char	*get_tail(char *s, size_t dstsize)
 {
-	while (*s != '\0' && size > 0)
+	while (*s != '\0' && dstsize > 0)
 	{
 		s++;
-		size--;
+		dstsize--;
 	}
-	if (size == 0)
+	if (dstsize == 0)
 		return (NULL);
 	else
 		return (s);
