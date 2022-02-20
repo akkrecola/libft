@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 13:58:49 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/19 23:51:38 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/20 11:33:16 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static const char	*set_sign(const char *str, int *sign)
 	{
 		if (*str == '-')
 			*sign = -1;
-		str++;
+		str += 1;
 	}
 	return (str);
 }
