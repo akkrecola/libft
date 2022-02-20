@@ -1,40 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/19 19:11:41 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/20 19:56:28 by elehtora         ###   ########.fr       */
+/*   Created: 2022/02/20 19:47:52 by elehtora          #+#    #+#             */
+/*   Updated: 2022/02/20 19:52:19 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*get_tail(char *s, size_t dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	while (*s && dstsize)
-	{
-		s++;
-		dstsize--;
-	}
-	if (!dstsize)
-		return (NULL);
-	else
-		return (s);
-}
-
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
-{
-	size_t	dstlen;
+	char	*p_dst;
 	size_t	srclen;
 
-	dstlen = ft_strlen(dst);
+	if (!dst || !src || !dstsize)
+		return (0);
+	p_dst = dst;
 	srclen = ft_strlen(src);
-	dst = get_tail(dst, dstsize);
-	if (!dst)
-		return (srclen + dstsize);
-	ft_strlcpy(dst, src, (dstsize - dstlen));
-	return (dstlen + srclen);
+	if (!dst || !src || !dstsize)
+		return (0);
+	while ((dstsize-- - 1) && *src)
+		*(p_dst++) = *(src++);
+	*p_dst = '\0';
+	return (srclen);
 }
