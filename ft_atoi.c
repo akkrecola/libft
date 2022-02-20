@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 13:58:49 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/20 11:33:16 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/20 21:32:54 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static const char	*skip_whitespace(const char *str)
 	return (str);
 }
 
-static const char	*set_sign(const char *str, int *sign)
+static const char	*set_sign(const char *str, short int *sign)
 {
 	if ((*str == '+' || *str == '-') && ft_isdigit(*(str + 1)))
 	{
@@ -40,9 +40,9 @@ static const char	*set_sign(const char *str, int *sign)
 
 int	ft_atoi(const char *str)
 {
-	int	sign;
-	int	digit;
-	int	result;
+	short int	sign;
+	int			digit;
+	long int	result;
 
 	str = skip_whitespace(str);
 	sign = 1;
@@ -53,5 +53,10 @@ int	ft_atoi(const char *str)
 		digit = *(str++) - '0';
 		result = result * 10 + digit;
 	}
-	return (sign * result);
+	result *= sign;
+	if (result < INT_MIN)
+		return (0);
+	if (result > INT_MAX)
+		return (-1);
+	return ((int) result);
 }
