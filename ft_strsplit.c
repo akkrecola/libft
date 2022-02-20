@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 16:50:09 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/20 17:23:43 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/20 17:47:47 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ static char	*add_substr(char const *s, char c)
 	while (*s != c && *s != '\0')
 		s++;
 	tail = s;
-	substr = ft_strnew(tail - start);
+	substr = ft_strnew((size_t)(tail - start));
 	if (!substr)
 		return (NULL);
-	ft_strncpy(substr, start, (tail - start));
+	ft_strncpy(substr, start, ((size_t)(tail - start)));
 	return (substr);
 }
 

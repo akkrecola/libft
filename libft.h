@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:00:26 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/19 14:15:55 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/20 17:40:32 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strstr(const char *haystack, const char *needle);
-char	*ft_strnstr(const char *s1, const char *s2, size_t len);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_islower(int c);
@@ -108,7 +108,7 @@ void	ft_putnbrnl(int n);
 void	ft_putlstnl(t_list *elem);
 void	ft_putmem(char *s, size_t n);
 void	ft_putmemnl(char *s, size_t n);
-void	ft_alphabetize(void *dest, int n);
+void	ft_alphabetize(void *dest, size_t n);
 t_list	*ft_lstcpyone(t_list *link);
 char	*ft_strnewi(const char *s);
 

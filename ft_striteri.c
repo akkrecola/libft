@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 18:28:50 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/20 16:16:46 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/20 17:46:04 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	size_t	i;
+	unsigned int	i;
 
 	if (!s || !f)
 		return ;
