@@ -6,7 +6,7 @@
 #    By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 15:27:40 by elehtora          #+#    #+#              #
-#    Updated: 2022/02/20 19:49:27 by elehtora         ###   ########.fr        #
+#    Updated: 2022/02/20 20:49:55 by elehtora         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,6 +79,7 @@ SRCS		=	ft_alphabetize.c	\
 				ft_strnequ.c		\
 				ft_strnew.c			\
 				ft_strnewi.c		\
+				ft_strnlen.c		\
 				ft_strnstr.c		\
 				ft_strrchr.c		\
 				ft_strsplit.c		\
