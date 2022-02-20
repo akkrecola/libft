@@ -6,7 +6,7 @@
 #    By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 15:27:40 by elehtora          #+#    #+#              #
-#    Updated: 2022/02/19 21:38:13 by elehtora         ###   ########.fr        #
+#    Updated: 2022/02/20 11:56:30 by elehtora         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -96,6 +96,7 @@ LIB=ar rc
 RM=/bin/rm -f
 OUT=*.out
 
+# Phony targets for recipes #
 .PHONY: all $(NAME) clean fclean re
 
 # RULES
@@ -103,13 +104,13 @@ OUT=*.out
 all : $(NAME)
 
 $(NAME) : $(SRCS)
-	@$(CC) $(CFLAGS) $(SRCS)
-	@$(LIB) $(NAME) $(OBJS)
+	$(CC) $(CFLAGS) $(SRCS)
+	$(LIB) $(NAME) $(OBJS)
 
 clean :
-	@$(RM) $(OBJS) $(OUT)
+	$(RM) $(OBJS) $(OUT)
 
 fclean : clean
-	@$(RM) $(NAME)
+	$(RM) $(NAME)
 
 re : fclean all
