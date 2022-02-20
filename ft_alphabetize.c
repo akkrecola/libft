@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 11:57:14 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/17 01:11:15 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/20 17:39:47 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 ** and outputs the characters written.
 */
 
-void	ft_alphabetize(void *dest, int n)
+void	ft_alphabetize(void *dest, size_t n)
 {
-	int	a;
-	int	i;
-	int	n_start;
-	int	row;
+	int		a;
+	int		i;
+	size_t	n_start;
+	int		row;
 
 	if (n < 1)
 		return ;
@@ -32,13 +32,13 @@ void	ft_alphabetize(void *dest, int n)
 	row = '0';
 	while (n-- > 0)
 	{
-		((char *)dest)[i++] = a++;
+		((char *)dest)[i++] = (char)a++;
 		if ((a - 1) == 'z')
 			a = 'A';
 		if ((a - 1) == 'Z')
 		{
 			a = 'a';
-			((char *)dest)[i++] = row++;
+			((char *)dest)[i++] = (char)row++;
 		}
 	}
 	ft_putstr("Characters written:\t");

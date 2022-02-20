@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 18:25:38 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/20 20:05:04 by elehtora         ###   ########.fr       */
+/*   Created: 2022/02/20 19:47:52 by elehtora          #+#    #+#             */
+/*   Updated: 2022/02/20 20:03:46 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striter(char *s, void (*f)(char *))
+#include "libft.h"
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	if (!s || !f)
-		return ;
-	while (*s != '\0')
-	{
-		f(s);
-		s++;
-	}
+	char	*p_dst;
+	size_t	srclen;
+
+	if (!dst || !src || !dstsize)
+		return (0);
+	p_dst = dst;
+	srclen = ft_strlen(src);
+	if (!dst || !src || !dstsize)
+		return (0);
+	while ((dstsize-- - 1) && *src)
+		*(p_dst++) = *(src++);
+	*p_dst = '\0';
+	return (srclen);
 }

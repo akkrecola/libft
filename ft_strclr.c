@@ -6,12 +6,14 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 16:49:21 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/11 16:58:27 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/20 16:16:04 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_strclr(char *s)
 {
+	if (!s)
+		return ;
 	while (*s != '\0')
 	{
 		*s = '\0';

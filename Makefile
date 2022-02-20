@@ -6,7 +6,7 @@
 #    By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 15:27:40 by elehtora          #+#    #+#              #
-#    Updated: 2022/02/20 11:56:30 by elehtora         ###   ########.fr        #
+#    Updated: 2022/02/20 20:04:55 by elehtora         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,13 +26,14 @@ SRCS		=	ft_alphabetize.c	\
 				ft_islower.c		\
 				ft_isprint.c		\
 				ft_isupper.c		\
-				ft_tolower.c		\
-				ft_toupper.c		\
 				ft_itoa.c			\
 				ft_lstadd.c			\
-				ft_lstdelone.c		\
-				ft_lstnew.c			\
 				ft_lstcpyone.c		\
+				ft_lstdel.c			\
+				ft_lstdelone.c		\
+				ft_lstiter.c		\
+				ft_lstmap.c			\
+				ft_lstnew.c			\
 				ft_memalloc.c		\
 				ft_memccpy.c		\
 				ft_memchr.c			\
@@ -83,18 +84,15 @@ SRCS		=	ft_alphabetize.c	\
 				ft_strstr.c			\
 				ft_strsub.c			\
 				ft_strtrim.c		\
-				ft_lstdel.c			\
-				ft_lstmap.c			\
-				ft_lstiter.c		
+				ft_tolower.c		\
+				ft_toupper.c
 
-
-OBJS = $(addsuffix .o, $(basename $(SRCS)))
+OBJS = $(SRCS:.c=.o)
 
 CC=clang
 CFLAGS = -c -Wall -Wextra -Werror
 LIB=ar rc
 RM=/bin/rm -f
-OUT=*.out
 
 # Phony targets for recipes #
 .PHONY: all $(NAME) clean fclean re
@@ -104,13 +102,16 @@ OUT=*.out
 all : $(NAME)
 
 $(NAME) : $(SRCS)
-	$(CC) $(CFLAGS) $(SRCS)
-	$(LIB) $(NAME) $(OBJS)
+	@echo "Compiling library $(NAME)..."
+	@$(CC) $(CFLAGS) $(SRCS)
+	@$(LIB) $(NAME) $(OBJS)
 
 clean :
-	$(RM) $(OBJS) $(OUT)
+	@echo "Cleaning..."
+	@$(RM) $(OBJS)
 
 fclean : clean
-	$(RM) $(NAME)
+	@echo "Cleaning $(NAME)..."
+	@$(RM) $(NAME)
 
 re : fclean all

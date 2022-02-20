@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 15:16:12 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/18 04:04:41 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/20 20:04:03 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,18 @@ static int	strequ_noterm(char const *s1, char const *s2, size_t len)
 	return (1);
 }
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	if (*little == '\0')
-		return ((char *) big);
-	while (*big && len > 0)
+	if (*needle == '\0')
+		return ((char *) haystack);
+	while (*haystack && len > 0)
 	{
-		if (*big == *little)
+		if (*haystack == *needle)
 		{
-			if (strequ_noterm(big, little, len) == 1)
-				return ((char *) big);
+			if (strequ_noterm(haystack, needle, len) == 1)
+				return ((char *) haystack);
 		}
-		big++;
+		haystack++;
 		len--;
 	}
 	return (NULL);

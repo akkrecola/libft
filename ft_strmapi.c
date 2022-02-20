@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 07:03:40 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/08 09:59:13 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/20 17:49:25 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*new_str;
-	int		i;
+	char			*new_str;
+	unsigned int	i;
 
+	if (!s || !f)
+		return (NULL);
 	new_str = ft_strnew(ft_strlen(s));
 	if (new_str == NULL)
 		return (NULL);

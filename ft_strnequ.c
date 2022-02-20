@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 22:08:27 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/05 06:52:28 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/20 16:18:45 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	ft_strnequ(char const *s1, char const *s2, size_t n)
 {
 	size_t	i;
 
+	if (!s1 || !s2)
+		return (-1);
 	i = 0;
 	while (i < n)
 	{
