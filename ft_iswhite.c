@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_iswhite.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 16:38:13 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/20 22:50:43 by elehtora         ###   ########.fr       */
+/*   Created: 2022/02/20 21:49:22 by elehtora          #+#    #+#             */
+/*   Updated: 2022/02/20 22:06:14 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+/*
+** ft_iswhite() returns 1 if c is an ASCII whitespace character, 0
+** otherwise.
+*/
 
-static int	ft_isdigit(long int c)
+int	ft_iswhite(char c)
 {
-	return (-9 <= c && c <= 9);
-}
-
-void	ft_putnbr(int n)
-{
-	long int	ln;
-
-	ln = (long int) n;
-	if (!ft_isdigit(ln))
-		ft_putnbr(((int)ln - ((int)ln % 10)) / 10);
-	else if (ln < 0)
-		write(1, "-", 1);
-	if (ln < 0)
-		ln *= (-1);
-	ln = ln % 10 + '0';
-	write(1, &ln, 1);
+	if ((9 <= c && c <= 13) || c == 32)
+		return (1);
+	else
+		return (0);
 }

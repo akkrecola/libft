@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 16:50:09 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/20 20:05:17 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/21 01:42:48 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,14 +90,12 @@ static char	**build_str_array(char ***str_array, char const *s, char c)
 char	**ft_strsplit(char const *s, char c)
 {
 	char	**str_array;
-	size_t	i;
 
 	if (!s)
 		return (NULL);
 	str_array = (char **) malloc(sizeof(char *) * count_substr(s, c) + 1);
 	if (!str_array)
 		return (NULL);
-	i = 0;
 	build_str_array(&str_array, s, c);
 	return (str_array);
 }
