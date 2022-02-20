@@ -6,7 +6,7 @@
 #    By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 15:27:40 by elehtora          #+#    #+#              #
-#    Updated: 2022/02/20 17:35:56 by elehtora         ###   ########.fr        #
+#    Updated: 2022/02/20 18:27:28 by elehtora         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -90,7 +90,7 @@ SRCS		=	ft_alphabetize.c	\
 OBJS = $(SRCS:.c=.o)
 
 CC=gcc
-CFLAGS = -c -Wall -Wextra -Werror -Wconversion
+CFLAGS = -c -Wall -Wextra -Werror
 LIB=ar rc
 RM=/bin/rm -f
 
@@ -112,6 +112,3 @@ fclean : clean
 	@$(RM) $(NAME)
 
 re : fclean all
-
-# Phony targets for recipes #
-#.PHONY: all $(NAME) clean fclean re
