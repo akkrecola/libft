@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 19:24:30 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/17 06:35:48 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/20 16:11:24 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 void	ft_strdel(char **as)
 {
-	free((void *)(*as));
-	*as = NULL;
+	if (as)
+	{
+		free((void *)(*as));
+		*as = NULL;
+	}
 }

@@ -6,7 +6,7 @@
 #    By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 15:27:40 by elehtora          #+#    #+#              #
-#    Updated: 2022/02/20 14:00:32 by elehtora         ###   ########.fr        #
+#    Updated: 2022/02/20 16:13:52 by elehtora         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,29 +87,31 @@ SRCS		=	ft_alphabetize.c	\
 				ft_tolower.c		\
 				ft_toupper.c
 
-OBJS = $(addsuffix .o, $(basename $(SRCS)))
+OBJS = $(SRCS:.c=.o)
 
 CC=gcc
 CFLAGS = -c -Wall -Wextra -Werror
 LIB=ar rc
 RM=/bin/rm -f
-OUT=*.out
-
-# Phony targets for recipes #
-.PHONY: all $(NAME) clean fclean re
 
 # RULES
 
 all : $(NAME)
 
 $(NAME) : $(SRCS)
-	$(CC) $(CFLAGS) $(SRCS)
-	$(LIB) $(NAME) $(OBJS)
+	@echo "Compiling library $(NAME)..."
+	@$(CC) $(CFLAGS) $(SRCS)
+	@$(LIB) $(NAME) $(OBJS)
 
 clean :
-	$(RM) $(OBJS) $(OUT)
+	@echo "Cleaning..."
+	@$(RM) $(OBJS)
 
 fclean : clean
-	$(RM) $(NAME)
+	@echo "Cleaning $(NAME)..."
+	@$(RM) $(NAME)
 
 re : fclean all
+
+# Phony targets for recipes #
+#.PHONY: all $(NAME) clean fclean re

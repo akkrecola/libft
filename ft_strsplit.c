@@ -6,12 +6,21 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 16:50:09 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/18 16:26:00 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/20 17:23:43 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
+
+static void	free_substrings(char **str_array)
+{
+	while (*str_array)
+	{
+		str_array++;
+		free(*(str_array - 1));
+	}
+}
 
 static char	*add_substr(char const *s, char c)
 {
@@ -50,14 +59,10 @@ static size_t	count_substr(char const *s, char c)
 	return (substrings);
 }
 
-char	**ft_strsplit(char const *s, char c)
+static char	**build_str_array(char ***str_array, char const *s, char c)
 {
-	char	**str_array;
 	size_t	i;
 
-	str_array = (char **) malloc(sizeof(char *) * count_substr(s, c) + 1);
-	if (!str_array)
-		return (NULL);
 	i = 0;
 	while (*s != '\0')
 	{
@@ -65,15 +70,34 @@ char	**ft_strsplit(char const *s, char c)
 			s++;
 		if (*s == '\0')
 			break ;
-		str_array[i] = add_substr(s, c);
-		if (str_array[i] == NULL)
+		(*(str_array))[i] = add_substr(s, c);
+		if ((*(str_array))[i] == NULL)
+		{
+			free_substrings(*str_array);
+			free(*str_array);
 			return (NULL);
+		}
 		i++;
 		while (*s != c && *s != '\0')
 			s++;
 		if (*s == '\0')
 			break ;
 	}
-	str_array[i] = 0;
+	(*(str_array))[i] = 0;
+	return (*str_array);
+}
+
+char	**ft_strsplit(char const *s, char c)
+{
+	char	**str_array;
+	size_t	i;
+
+	if (!s)
+		return (NULL);
+	str_array = (char **) malloc(sizeof(char *) * count_substr(s, c) + 1);
+	if (!str_array)
+		return (NULL);
+	i = 0;
+	build_str_array(&str_array, s, c);
 	return (str_array);
 }

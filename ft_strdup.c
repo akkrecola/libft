@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 15:11:06 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/17 06:39:02 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/20 15:56:45 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,8 @@
 char	*ft_strdup(const char *s)
 {
 	char	*new;
-	size_t	len;
 
-	len = ft_strlen(s);
-	new = ft_strnew(len);
+	new = ft_strnew(ft_strlen(s));
 	if (new == NULL)
 		return (NULL);
 	ft_strcpy(new, s);

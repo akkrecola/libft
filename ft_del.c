@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 12:29:47 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/17 01:19:15 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/20 16:07:51 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 
 void	ft_del(void *content, size_t content_size)
 {
-	ft_bzero(content, content_size);
-	free(content);
+	if (content)
+	{
+		ft_bzero(content, content_size);
+		free(content);
+	}
 }
