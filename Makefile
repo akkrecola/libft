@@ -6,7 +6,7 @@
 #    By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 15:27:40 by elehtora          #+#    #+#              #
-#    Updated: 2022/02/21 18:56:28 by elehtora         ###   ########.fr        #
+#    Updated: 2022/02/21 19:28:26 by elehtora         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -95,9 +95,6 @@ CC=clang
 CFLAGS = -c -Wall -Wextra -Werror
 LIB=ar rc
 RM=/bin/rm -f
-
-# Phony targets for recipes #
-.PHONY: all $(NAME) clean fclean re
 
 # RULES
 
