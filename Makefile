@@ -6,7 +6,7 @@
 #    By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 15:27:40 by elehtora          #+#    #+#              #
-#    Updated: 2022/02/21 01:42:57 by elehtora         ###   ########.fr        #
+#    Updated: 2022/02/20 22:05:22 by elehtora         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,6 +76,7 @@ SRCS		=	ft_alphabetize.c	\
 				ft_strncmp.c		\
 				ft_strncpy.c		\
 				ft_strlcat.c		\
+				ft_strlcpy.c		\
 				ft_strnequ.c		\
 				ft_strnew.c			\
 				ft_strnewi.c		\
@@ -91,13 +92,10 @@ SRCS		=	ft_alphabetize.c	\
 
 OBJS = $(SRCS:.c=.o)
 
-CC=clang
+CC=gcc
 CFLAGS = -c -Wall -Wextra -Werror
 LIB=ar rc
 RM=/bin/rm -f
-
-# Phony targets for recipes #
-.PHONY: all $(NAME) clean fclean re
 
 # RULES
 
