@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_iswhite.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 02:24:19 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/21 13:08:33 by elehtora         ###   ########.fr       */
+/*   Created: 2022/02/20 21:49:22 by elehtora          #+#    #+#             */
+/*   Updated: 2022/02/21 18:56:15 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** Need for cast in while condition?
+** ft_iswhite() returns 1 if c is an ASCII whitespace character, 0
+** otherwise.
 */
 
-int	ft_strcmp(const char *s1, const char *s2)
+int	ft_iswhite(char c)
 {
-	while ((unsigned char) *s1 == (unsigned char) *s2 && (*s1 && *s2))
-	{
-		s1++;
-		s2++;
-	}
-	return ((unsigned char) *s1 - (unsigned char) *s2);
+	if ((9 <= c && c <= 13) || c == 32)
+		return (1);
+	else
+		return (0);
 }

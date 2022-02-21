@@ -6,16 +6,12 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:00:26 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/20 20:44:59 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/21 18:49:55 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-
-/* Max integer definitions */
-# define INT_MAX 2147483647
-# define INT_MIN -2147483648
 
 /* Necessary (and permitted) inclusions */
 # include <string.h>
@@ -61,6 +57,7 @@ int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
+int		ft_iswhite(int c);
 int		ft_atoi(const char *str);
 
 /* Part 2 function prototypes */
