@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 13:58:49 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/20 21:32:54 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/21 18:59:57 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,5 @@ int	ft_atoi(const char *str)
 		result = result * 10 + digit;
 	}
 	result *= sign;
-	if (result < INT_MIN)
-		return (0);
-	if (result > INT_MAX)
-		return (-1);
 	return ((int) result);
 }
