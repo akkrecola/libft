@@ -6,7 +6,7 @@
 #    By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 15:27:40 by elehtora          #+#    #+#              #
-#    Updated: 2022/02/20 22:05:22 by elehtora         ###   ########.fr        #
+#    Updated: 2022/02/22 01:14:48 by elehtora         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRCS		=	ft_alphabetize.c	\
 				ft_atoi.c			\
 				ft_bzero.c			\
 				ft_del.c			\
-				ft_dgtcnt.c			\
+				ft_count_digs.c		\
 				ft_isalnum.c		\
 				ft_isalpha.c		\
 				ft_isascii.c		\
@@ -92,7 +92,7 @@ SRCS		=	ft_alphabetize.c	\
 
 OBJS = $(SRCS:.c=.o)
 
-CC=gcc
+CC=clang
 CFLAGS = -c -Wall -Wextra -Werror
 LIB=ar rc
 RM=/bin/rm -f
