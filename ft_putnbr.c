@@ -6,13 +6,13 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 16:38:13 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/20 17:48:40 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/22 01:03:14 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-static int	isdigit(long int c)
+static int	is_digit(long int c)
 {
 	return (-9 <= c && c <= 9);
 }
@@ -22,7 +22,7 @@ void	ft_putnbr(int n)
 	long int	ln;
 
 	ln = (long int) n;
-	if (!isdigit(ln))
+	if (!is_digit(ln))
 		ft_putnbr(((int)ln - ((int)ln % 10)) / 10);
 	else if (ln < 0)
 		write(1, "-", 1);
