@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_isalnum.c                                     :+:      :+:    :+:   */
+/*   ft_strnlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/03 17:50:28 by elehtora          #+#    #+#             */
-/*   Updated: 2021/11/03 18:15:02 by elehtora         ###   ########.fr       */
+/*   Created: 2022/02/20 20:45:27 by elehtora          #+#    #+#             */
+/*   Updated: 2022/02/20 20:49:05 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
+#include <string.h>
 
-int	 main(int argc, char **argv)
+size_t	ft_strnlen(const char *s, size_t maxlen)
 {
-	char c;
+	size_t	len;
 
-	if (argc != 2)
-		return (-1);
-
-	c = argv[1][0];
-	if (ft_isalnum(c) == 1)
-		printf("Input %c alphanumeric:\tTRUE", c);
-	if (ft_isalnum(c) == 0)
-		printf("Input %c alphanumeric\tFALSE", c);
-	return (0);
+	len = 0;
+	while (s[len] && len <= maxlen)
+		len++;
+	if (len > maxlen)
+		return (maxlen);
+	else
+		return (len);
 }

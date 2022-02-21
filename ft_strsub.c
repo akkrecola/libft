@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/24 12:41:34 by elehtora          #+#    #+#             */
-/*   Updated: 2021/12/25 01:52:59 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/20 20:05:18 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,11 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	char	*subs;
 	int		i;
 
-	subs = (char *) malloc(len + 1);
+	if (!s)
+		return (NULL);
+	subs = ft_strnew(len);
+	if (!subs)
+		return (NULL);
 	i = 0;
 	while (len-- > 0)
 		subs[i++] = s[start++];

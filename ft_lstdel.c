@@ -6,12 +6,11 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 23:57:22 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/17 01:40:21 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/18 03:28:26 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 #include <stdlib.h>
 
 /*

@@ -6,18 +6,16 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 15:16:12 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/05 05:41:24 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/19 16:08:27 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-static int	strequ_noterm(char const *haystack, char const *needle)
+static int	verify_needle(const char *haystack, const char *needle)
 {
-	while (*haystack != '\0' && *needle != '\0')
+	while (*haystack != '\0' && *needle != '\0' && *haystack == *needle)
 	{
-		if (*haystack != *needle)
-			return (0);
 		haystack++;
 		needle++;
 	}
@@ -34,7 +32,7 @@ char	*ft_strstr(const char *haystack, const char *needle)
 	{
 		if (*haystack == *needle)
 		{
-			if (strequ_noterm(haystack, needle) == 1)
+			if (verify_needle(haystack, needle) == 1)
 				return ((char *) haystack);
 		}
 		haystack++;

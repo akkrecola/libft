@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnequ.c                                       :+:      :+:    :+:   */
+/*   ft_iswhite.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/22 22:08:27 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/31 07:07:52 by elehtora         ###   ########.fr       */
+/*   Created: 2022/02/20 21:49:22 by elehtora          #+#    #+#             */
+/*   Updated: 2022/02/21 18:56:15 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/*
+** ft_iswhite() returns 1 if c is an ASCII whitespace character, 0
+** otherwise.
+*/
 
-int	ft_strnequ(char const *s1, char const *s2, size_t n)
+int	ft_iswhite(char c)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n && s1[i] != '\0' && s2[i] != '\0')
-	{
-		if (s1[i] != s2[i])
-			return (0);
-		i++;
-	}
-	if (s1[i] != s2[i]) // TODO
+	if ((9 <= c && c <= 13) || c == 32)
+		return (1);
+	else
 		return (0);
-	return (1);
 }

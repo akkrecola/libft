@@ -6,7 +6,7 @@
 #    By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 15:27:40 by elehtora          #+#    #+#              #
-#    Updated: 2022/02/15 21:38:43 by elehtora         ###   ########.fr        #
+#    Updated: 2022/02/21 19:28:26 by elehtora         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,13 +26,15 @@ SRCS		=	ft_alphabetize.c	\
 				ft_islower.c		\
 				ft_isprint.c		\
 				ft_isupper.c		\
-				ft_tolower.c		\
-				ft_toupper.c		\
+				ft_iswhite.c		\
 				ft_itoa.c			\
 				ft_lstadd.c			\
-				ft_lstdelone.c		\
-				ft_lstnew.c			\
 				ft_lstcpyone.c		\
+				ft_lstdel.c			\
+				ft_lstdelone.c		\
+				ft_lstiter.c		\
+				ft_lstmap.c			\
+				ft_lstnew.c			\
 				ft_memalloc.c		\
 				ft_memccpy.c		\
 				ft_memchr.c			\
@@ -48,7 +50,6 @@ SRCS		=	ft_alphabetize.c	\
 				ft_putcharnl.c		\
 				ft_putendl.c		\
 				ft_putendl_fd.c		\
-				ft_putlstnl.c		\
 				ft_putmem.c			\
 				ft_putmemnl.c		\
 				ft_putnbr.c			\
@@ -75,58 +76,41 @@ SRCS		=	ft_alphabetize.c	\
 				ft_strncmp.c		\
 				ft_strncpy.c		\
 				ft_strlcat.c		\
-				ft_strlcpy.c		\
 				ft_strnequ.c		\
 				ft_strnew.c			\
 				ft_strnewi.c		\
+				ft_strnlen.c		\
 				ft_strnstr.c		\
 				ft_strrchr.c		\
 				ft_strsplit.c		\
 				ft_strstr.c			\
 				ft_strsub.c			\
 				ft_strtrim.c		\
-				ft_lstdel.c			\
-				ft_lstmap.c			\
-				ft_lstiter.c		
+				ft_tolower.c		\
+				ft_toupper.c
 
+OBJS = $(SRCS:.c=.o)
 
-OBJS = $(addsuffix .o, $(basename $(SRCS)))
-
-CC=gcc
+CC=clang
 CFLAGS = -c -Wall -Wextra -Werror
 LIB=ar rc
 RM=/bin/rm -f
-OUT=*.out
 
 # RULES
 
-all : $(NAME) clean
+all : $(NAME)
 
 $(NAME) : $(SRCS)
+	@echo "Compiling library $(NAME)..."
 	@$(CC) $(CFLAGS) $(SRCS)
 	@$(LIB) $(NAME) $(OBJS)
 
 clean :
-	@$(RM) $(OBJS) $(OUT)
+	@echo "Cleaning..."
+	@$(RM) $(OBJS)
 
 fclean : clean
+	@echo "Cleaning $(NAME)..."
 	@$(RM) $(NAME)
 
 re : fclean all
-
-###############
-### TESTING ###
-###############
-
-# TEST VARIABLES
-
-TESTDIR=tests
-TESTS=$(wildcard $(TESTDIR)/*.c)
-# TESTBIN=
-TESTFLAGS=-lcriterion
-
-# TEST RULES
-
-so:
-	gcc -c -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)

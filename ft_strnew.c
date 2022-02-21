@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 18:31:06 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/24 18:46:38 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/20 20:05:16 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strnew(size_t size)
 	if (area == NULL)
 		return (NULL);
 	i = 0;
-	while (i < size)
+	while (i < size + 1)
 	{
 		area[i] = '\0';
 		i++;
