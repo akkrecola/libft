@@ -6,16 +6,12 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:00:26 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/20 22:05:48 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/21 18:49:55 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-
-/* Max integer definitions */
-# define INT_MAX 2147483647
-# define INT_MIN -2147483648
 
 /* Necessary (and permitted) inclusions */
 # include <string.h>
