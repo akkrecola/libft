@@ -6,7 +6,7 @@
 #    By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 15:27:40 by elehtora          #+#    #+#              #
-#    Updated: 2022/02/22 01:14:48 by elehtora         ###   ########.fr        #
+#    Updated: 2022/02/22 01:50:42 by elehtora         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,6 @@ SRCS		=	ft_alphabetize.c	\
 				ft_memmove.c		\
 				ft_memrchr.c		\
 				ft_memset.c			\
-				ft_nl.c				\
 				ft_putchar.c		\
 				ft_putchar_fd.c		\
 				ft_putcharnl.c		\
@@ -79,7 +78,6 @@ SRCS		=	ft_alphabetize.c	\
 				ft_strlcpy.c		\
 				ft_strnequ.c		\
 				ft_strnew.c			\
-				ft_strnewi.c		\
 				ft_strnlen.c		\
 				ft_strnstr.c		\
 				ft_strrchr.c		\
