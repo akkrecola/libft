@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 11:57:14 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/20 17:39:47 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/22 19:36:29 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,4 @@ void	ft_alphabetize(void *dest, size_t n)
 			((char *)dest)[i++] = (char)row++;
 		}
 	}
-	ft_putstr("Characters written:\t");
-	ft_putmemnl(dest, n_start);
 }
