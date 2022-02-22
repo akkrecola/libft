@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 11:57:14 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/22 19:36:29 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/22 20:27:21 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,12 @@ void	ft_alphabetize(void *dest, size_t n)
 {
 	int		a;
 	int		i;
-	size_t	n_start;
 	int		row;
 
 	if (n < 1)
 		return ;
 	a = 'a';
 	i = 0;
-	n_start = n;
 	row = '0';
 	while (n-- > 0)
 	{
