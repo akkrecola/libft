@@ -6,7 +6,7 @@
 #    By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 15:27:40 by elehtora          #+#    #+#              #
-#    Updated: 2022/02/22 19:44:01 by elehtora         ###   ########.fr        #
+#    Updated: 2022/02/24 23:25:57 by elehtora         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,7 +88,7 @@ OBJS = $(SRCS:.c=.o)
 
 CC=clang
 CFLAGS = -c -Wall -Wextra -Werror
-LIB=ar rc
+LIB=ar rcs
 RM=/bin/rm -f
 
 # RULES
