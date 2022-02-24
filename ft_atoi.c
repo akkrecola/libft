@@ -6,23 +6,15 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 13:58:49 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/21 18:59:57 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/22 21:07:25 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_whitespace(char c)
-{
-	if ((9 <= c && c <= 13) || c == 32)
-		return (1);
-	else
-		return (0);
-}
-
 static const char	*skip_whitespace(const char *str)
 {
-	while (is_whitespace(*str))
+	while (ft_iswhite(*str))
 		str++;
 	return (str);
 }
