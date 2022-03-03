@@ -6,24 +6,11 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 19:11:41 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/20 19:56:28 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/21 18:56:09 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static char	*get_tail(char *s, size_t dstsize)
-{
-	while (*s && dstsize)
-	{
-		s++;
-		dstsize--;
-	}
-	if (!dstsize)
-		return (NULL);
-	else
-		return (s);
-}
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
@@ -32,7 +19,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 	dstlen = ft_strlen(dst);
 	srclen = ft_strlen(src);
-	dst = get_tail(dst, dstsize);
+	dst = ft_memchr(dst, '\0', dstsize);
 	if (!dst)
 		return (srclen + dstsize);
 	ft_strlcpy(dst, src, (dstsize - dstlen));

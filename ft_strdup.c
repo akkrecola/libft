@@ -6,14 +6,14 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 15:11:06 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/20 15:56:45 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/20 20:05:02 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Standard library's strdup sets errno, but errno.h is a forbidden include, 
+** Standard library's strdup sets errno, but errno.h is a forbidden include,
 ** so errno is excluded also from this function.
 */
 
