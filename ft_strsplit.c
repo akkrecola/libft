@@ -6,11 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 16:50:09 by elehtora          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/02/24 23:39:17 by elehtora         ###   ########.fr       */
-=======
-/*   Updated: 2022/03/03 18:42:44 by elehtora         ###   ########.fr       */
->>>>>>> refs/remotes/origin/master
+/*   Updated: 2022/03/22 21:43:51 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

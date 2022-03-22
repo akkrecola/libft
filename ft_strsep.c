@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 21:06:18 by elehtora          #+#    #+#             */
-/*   Updated: 2022/03/22 21:32:00 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/03/22 21:43:41 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strsep(char **p_string, char c)
 {
 	char	*latter;
 
-	if (!p_string || !(*p_string) || !isascii(c))
+	if (!p_string || !(*p_string) || !ft_isascii(c))
 		return (NULL);
 	latter = ft_strchr(*p_string, c);
 	if (!latter)
