@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 16:50:09 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/21 18:56:07 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/24 23:39:17 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,17 +45,15 @@ static size_t	count_substr(char const *s, char c)
 static char	*add_substr(char const *s, char c)
 {
 	char const	*start;
-	char const	*tail;
 	char		*substr;
 
 	start = s;
 	while (*s != c && *s != '\0')
 		s++;
-	tail = s;
-	substr = ft_strnew((size_t)(tail - start));
+	substr = ft_strnew((size_t)(s - start));
 	if (!substr)
 		return (NULL);
-	ft_strncpy(substr, start, ((size_t)(tail - start)));
+	ft_strncpy(substr, start, ((size_t)(s - start)));
 	return (substr);
 }
 

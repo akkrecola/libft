@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:00:26 by elehtora          #+#    #+#             */
-/*   Updated: 2022/03/22 21:33:01 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/03/22 21:38:23 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,12 +99,7 @@ void	ft_del(void *content, size_t content_size);
 
 /* Voluntary functions (for testing) */
 size_t	ft_count_digs(int n);
-void	ft_putstrnl(char const *s);
-void	ft_putcharnl(char c);
-void	ft_putnbrnl(int n);
-void	ft_putlstnl(t_list *elem);
 void	ft_putmem(char *s, size_t n);
-void	ft_putmemnl(char *s, size_t n);
 void	ft_alphabetize(void *dest, size_t n);
 t_list	*ft_lstcpyone(t_list *link);
 
