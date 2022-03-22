@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:00:26 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/22 01:50:27 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/03/22 21:33:01 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,5 +107,8 @@ void	ft_putmem(char *s, size_t n);
 void	ft_putmemnl(char *s, size_t n);
 void	ft_alphabetize(void *dest, size_t n);
 t_list	*ft_lstcpyone(t_list *link);
+
+/* Additional functions added after completion */
+char	*ft_strsep(char **p_string, char c);
 
 #endif
