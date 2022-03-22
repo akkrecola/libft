@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 21:06:18 by elehtora          #+#    #+#             */
-/*   Updated: 2022/03/22 21:43:41 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/03/22 21:46:16 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
  * as before.
 */
 
-char	*ft_strsep(char **p_string, char c)
+char	*ft_strsep(char **p_string, int c)
 {
 	char	*latter;
 
