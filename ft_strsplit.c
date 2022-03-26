@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 16:50:09 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/21 01:42:48 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/03/26 13:57:51 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,6 @@ static void	free_substrings(char **str_array)
 		str_array++;
 		free(*(str_array - 1));
 	}
-}
-
-static char	*add_substr(char const *s, char c)
-{
-	char const	*start;
-	char const	*tail;
-	char		*substr;
-
-	start = s;
-	while (*s != c && *s != '\0')
-		s++;
-	tail = s;
-	substr = ft_strnew((size_t)(tail - start));
-	if (!substr)
-		return (NULL);
-	ft_strncpy(substr, start, ((size_t)(tail - start)));
-	return (substr);
 }
 
 static size_t	count_substr(char const *s, char c)
@@ -57,6 +40,21 @@ static size_t	count_substr(char const *s, char c)
 		s++;
 	}
 	return (substrings);
+}
+
+static char	*add_substr(char const *s, char c)
+{
+	char const	*start;
+	char		*substr;
+
+	start = s;
+	while (*s != c && *s != '\0')
+		s++;
+	substr = ft_strnew((size_t)(s - start));
+	if (!substr)
+		return (NULL);
+	ft_strncpy(substr, start, ((size_t)(s - start)));
+	return (substr);
 }
 
 static char	**build_str_array(char ***str_array, char const *s, char c)

@@ -6,20 +6,11 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 13:09:05 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/20 20:05:19 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/23 12:43:21 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-
-static int	is_whitespace(char c)
-{
-	if (c == '\n' || c == ' ' || c == '\t')
-		return (1);
-	else
-		return (0);
-}
 
 static char	*get_tail(char *s)
 {
@@ -30,9 +21,9 @@ static char	*get_tail(char *s)
 	while (*s != '\0')
 		s++;
 	if (s == start)
-		return ((char *)s);
+		return ((char *) s);
 	tail = s - 1;
-	while (is_whitespace(*tail))
+	while (ft_iswhite(*tail))
 		tail--;
 	return (tail);
 }
@@ -42,7 +33,7 @@ static char	*get_start(char const *s)
 	char	*start;
 
 	start = (char *) s;
-	while (is_whitespace(*start))
+	while (ft_iswhite(*start))
 		start++;
 	return (start);
 }

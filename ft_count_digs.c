@@ -1,14 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dgtcnt.c                                        :+:      :+:    :+:   */
+/*   ft_count_digs.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 02:44:17 by elehtora          #+#    #+#             */
-/*   Updated: 2022/02/17 01:22:28 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/02/22 01:12:39 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 /*
 ** Counts and returns the number of digits in n.
@@ -17,16 +19,18 @@
 ** Inputs out of integer range result in undefined behaviour.
 */
 
-int	ft_dgtcnt(int n)
+size_t	ft_count_digs(int n)
 {
-	int	count;
+	size_t		count;
+	long int	ln;
 
-	if (n < 0)
-		n *= -1;
+	ln = (long int) n;
+	if (ln < 0)
+		ln *= -1;
 	count = 0;
-	while (n > 9)
+	while (ln > 9)
 	{
-		n = (n - n % 10) / 10;
+		ln = (ln - ln % 10) / 10;
 		count++;
 	}
 	return (count + 1);

@@ -6,7 +6,7 @@
 #    By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 15:27:40 by elehtora          #+#    #+#              #
-#    Updated: 2022/02/20 22:05:22 by elehtora         ###   ########.fr        #
+#    Updated: 2022/03/26 13:58:07 by elehtora         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRCS		=	ft_alphabetize.c	\
 				ft_atoi.c			\
 				ft_bzero.c			\
 				ft_del.c			\
-				ft_dgtcnt.c			\
+				ft_count_digs.c		\
 				ft_isalnum.c		\
 				ft_isalpha.c		\
 				ft_isascii.c		\
@@ -44,20 +44,15 @@ SRCS		=	ft_alphabetize.c	\
 				ft_memmove.c		\
 				ft_memrchr.c		\
 				ft_memset.c			\
-				ft_nl.c				\
 				ft_putchar.c		\
 				ft_putchar_fd.c		\
-				ft_putcharnl.c		\
 				ft_putendl.c		\
 				ft_putendl_fd.c		\
 				ft_putmem.c			\
-				ft_putmemnl.c		\
 				ft_putnbr.c			\
 				ft_putnbr_fd.c		\
-				ft_putnbrnl.c		\
 				ft_putstr.c			\
 				ft_putstr_fd.c		\
-				ft_putstrnl.c		\
 				ft_strcat.c			\
 				ft_strchr.c			\
 				ft_strclr.c			\
@@ -79,10 +74,10 @@ SRCS		=	ft_alphabetize.c	\
 				ft_strlcpy.c		\
 				ft_strnequ.c		\
 				ft_strnew.c			\
-				ft_strnewi.c		\
 				ft_strnlen.c		\
 				ft_strnstr.c		\
 				ft_strrchr.c		\
+				ft_strsep.c			\
 				ft_strsplit.c		\
 				ft_strstr.c			\
 				ft_strsub.c			\
@@ -94,7 +89,7 @@ OBJS = $(SRCS:.c=.o)
 
 CC=gcc
 CFLAGS = -c -Wall -Wextra -Werror
-LIB=ar rc
+LIB=ar rcs
 RM=/bin/rm -f
 
 # RULES
