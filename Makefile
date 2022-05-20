@@ -6,7 +6,7 @@
 #    By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 15:27:40 by elehtora          #+#    #+#              #
-#    Updated: 2022/03/26 13:58:07 by elehtora         ###   ########.fr        #
+#    Updated: 2022/05/20 16:20:11 by elehtora         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,6 +56,7 @@ SRCS		=	ft_alphabetize.c	\
 				ft_strcat.c			\
 				ft_strchr.c			\
 				ft_strclr.c			\
+				ft_strrclr.c		\
 				ft_strcmp.c			\
 				ft_strcpy.c			\
 				ft_strdel.c			\
@@ -87,7 +88,7 @@ SRCS		=	ft_alphabetize.c	\
 
 OBJS = $(SRCS:.c=.o)
 
-CC=gcc
+CC=clang
 CFLAGS = -c -Wall -Wextra -Werror
 LIB=ar rcs
 RM=/bin/rm -f
