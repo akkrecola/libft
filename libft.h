@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:00:26 by elehtora          #+#    #+#             */
-/*   Updated: 2022/03/22 21:46:46 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/06/01 18:49:45 by Erkka            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_iswhite(int c);
+int		ft_arechars(char *str, const char *charset);
 
 /* Part 2 function prototypes */
 void	*ft_memalloc(size_t size);
