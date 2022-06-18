@@ -6,7 +6,7 @@
 #    By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 15:27:40 by elehtora          #+#    #+#              #
-#    Updated: 2022/06/10 18:49:47 by elehtora         ###   ########.fr        #
+#    Updated: 2022/06/18 12:51:47 by elehtora         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -90,25 +90,29 @@ SRCS		=	ft_atoi.c			\
 OBJS = $(SRCS:.c=.o)
 
 CC=clang
-CFLAGS = -c -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 LIB=ar rcs
 RM=/bin/rm -f
 
 # RULES
+.PHONY: all objmessage clean fclean re
 
 all : $(NAME)
 
-$(NAME) : $(SRCS)
-	@echo "Compiling library $(NAME)..."
-	@$(CC) $(CFLAGS) $(SRCS)
+$(NAME) : $(OBJS)
+	@echo "Linking as library \033[1;32m$(NAME)...\033[0m"
 	@$(LIB) $(NAME) $(OBJS)
 
+%.o : %.c
+	@echo "Creating object file:\t\033[1;32m$(<:.c=.o)\033[0m"
+	@$(CC) $(CFLAGS) -c $<
+
 clean :
-	@echo "Cleaning..."
+	@echo "\033[1;32mCleaning object files.\033[0m"
 	@$(RM) $(OBJS)
 
 fclean : clean
-	@echo "Cleaning $(NAME)..."
+	@echo "\033[1;32mCleaning $(NAME)...\033[0m"
 	@$(RM) $(NAME)
 
 re : fclean all
