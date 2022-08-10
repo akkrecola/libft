@@ -6,7 +6,7 @@
 #    By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 15:27:40 by elehtora          #+#    #+#              #
-#    Updated: 2022/08/10 10:58:59 by elehtora         ###   ########.fr        #
+#    Updated: 2022/06/23 16:12:06 by elehtora         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,14 +53,20 @@ SRCS		=	ft_atoi.c			\
 				ft_putnbr_fd.c		\
 				ft_putstr.c			\
 				ft_putstr_fd.c		\
+				ft_putbits.c		\
+				ft_pow.c			\
+				ft_strappend.c		\
 				ft_strcat.c			\
 				ft_strchr.c			\
 				ft_strclr.c			\
 				ft_strrclr.c		\
 				ft_strcmp.c			\
 				ft_strcpy.c			\
+				ft_strdcpy.c		\
 				ft_strdel.c			\
 				ft_strdup.c			\
+				ft_strndup.c		\
+				ft_strddup.c		\
 				ft_strequ.c			\
 				ft_strgetset.c		\
 				ft_striter.c		\
