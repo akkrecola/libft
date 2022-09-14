@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:00:26 by elehtora          #+#    #+#             */
-/*   Updated: 2022/06/23 16:15:34 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/09/14 17:11:29 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,5 +119,6 @@ t_list		*ft_lstcpyone(t_list *link);
 /* Additional functions added after completion */
 char		*ft_strsep(char **p_string, int c);
 size_t		ft_nat_sqrt(unsigned int n);
+int			ft_strarrlen(char **str_array);
 
 #endif
