@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:00:26 by elehtora          #+#    #+#             */
-/*   Updated: 2022/09/14 17:11:29 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/09/15 03:28:51 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
 char		*ft_strchr(const char *s, int c);
 char		*ft_strrchr(const char *s, int c);
+char		*ft_strrev(const char *str);
 char		*ft_strstr(const char *haystack, const char *needle);
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char		*ft_strpbrk(const char *s, const char *charset);
