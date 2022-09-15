@@ -6,7 +6,7 @@
 #    By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 15:27:40 by elehtora          #+#    #+#              #
-#    Updated: 2022/09/15 03:29:13 by elehtora         ###   ########.fr        #
+#    Updated: 2022/09/15 19:02:04 by elehtora         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ SRCS		=	ft_atoi.c			\
 				ft_iswhite.c		\
 				ft_arechars.c		\
 				ft_itoa.c			\
+				ft_ltoa.c			\
 				ft_lstadd.c			\
 				ft_lstcpyone.c		\
 				ft_lstdel.c			\
@@ -56,7 +57,6 @@ SRCS		=	ft_atoi.c			\
 				ft_putbits.c		\
 				ft_pow.c			\
 				ft_strappend.c		\
-				ft_strarrlen.c		\
 				ft_strcat.c			\
 				ft_strchr.c			\
 				ft_strclr.c			\
@@ -88,7 +88,6 @@ SRCS		=	ft_atoi.c			\
 				ft_strnstr.c		\
 				ft_strpbrk.c		\
 				ft_strrchr.c		\
-				ft_strrev.c			\
 				ft_strsep.c			\
 				ft_strsplit.c		\
 				ft_strstr.c			\
