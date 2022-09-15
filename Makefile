@@ -6,7 +6,7 @@
 #    By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 15:27:40 by elehtora          #+#    #+#              #
-#    Updated: 2022/09/15 20:14:55 by elehtora         ###   ########.fr        #
+#    Updated: 2022/09/15 21:20:07 by elehtora         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,6 +61,7 @@ SRCS		=	ft_atoi.c			\
 				ft_strchr.c			\
 				ft_strclr.c			\
 				ft_strrclr.c		\
+				ft_strrev.c			\
 				ft_strcmp.c			\
 				ft_strcpy.c			\
 				ft_strdcpy.c		\
