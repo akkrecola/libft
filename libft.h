@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:00:26 by elehtora          #+#    #+#             */
-/*   Updated: 2022/09/15 21:19:34 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/09/16 17:11:21 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,7 @@ void		ft_putbits(void *var, uint8_t bytes);
 
 /* Math */
 uint64_t	ft_pow(unsigned base, unsigned exponent);
+int			ft_abs(int x);
 
 /* Bonus part function prototypes */
 t_list		*ft_lstnew(void const *content, size_t content_size);
