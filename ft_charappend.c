@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 12:00:16 by elehtora          #+#    #+#             */
-/*   Updated: 2022/09/12 21:59:35 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/09/19 03:38:10 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
  *
  * Returns a pointer to the string appended to.
  */
-char	*ft_strappend(char *str, char append)
+char	*ft_charappend(char *str, char append)
 {
 	char	*atnull;
 
