@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:00:26 by elehtora          #+#    #+#             */
-/*   Updated: 2022/09/19 05:31:04 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/09/19 12:20:59 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,9 @@ void		ft_putnbr_fd(int n, int fd);
 void		ft_putbits(void *var, uint8_t bytes);
 
 /* Math */
-uint64_t	ft_pow(unsigned base, unsigned exponent);
+double		ft_pow(double base, double exp);
+float		ft_powf(float base, float exp);
+int			ft_powi(int base, int exp);
 int			ft_abs(int x);
 
 /* Bonus part function prototypes */
