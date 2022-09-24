@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 17:04:49 by elehtora          #+#    #+#             */
-/*   Updated: 2022/09/24 19:38:19 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/09/24 19:46:55 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,21 @@ double	ft_fabs(double x)
 	return (x);
 }
 
-long double	ft_fabs(long double x)
+long double	ft_lfabs(long double x)
 {
 	if (x < 0.0L)
 		return (-x);
 	return (x);
 }
 
-long	ft_fabs(long x)
+long	ft_labs(long x)
 {
 	if (x < 0L)
 		return (-x);
 	return (x);
 }
 
-long long	ft_fabs(long long x)
+long long	ft_llabs(long long x)
 {
 	if (x < 0LL)
 		return (-x);

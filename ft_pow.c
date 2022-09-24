@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 16:07:24 by elehtora          #+#    #+#             */
-/*   Updated: 2022/09/20 22:33:58 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/09/24 17:47:50 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ double	ft_pow(double base, double exp)
 	while (exp > 1.0f)
 	{
 		result *= base;
-		exp -= 1;
+		exp--;
 	}
 	return (result);
 }
@@ -34,7 +34,7 @@ float	ft_powf(float base, float exp)
 	while (exp > 1.0f)
 	{
 		result *= base;
-		exp -= 1;
+		exp--;
 	}
 	return (result);
 }
