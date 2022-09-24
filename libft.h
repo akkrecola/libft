@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:00:26 by elehtora          #+#    #+#             */
-/*   Updated: 2022/09/24 18:09:36 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/09/24 18:27:04 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,7 @@ float		ft_powf(float base, float exp);
 int			ft_powi(int base, int exp);
 int			ft_abs(int x);
 long double	ft_truncl(long double x);
+long double	ft_roundl(long double x);
 
 /* Bonus part function prototypes */
 t_list		*ft_lstnew(void const *content, size_t content_size);
