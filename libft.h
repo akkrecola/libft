@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:00:26 by elehtora          #+#    #+#             */
-/*   Updated: 2022/09/24 19:44:16 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/09/25 10:47:23 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ int			ft_abs(int x);
 long		ft_labs(long x);
 long long	ft_llabs(long long x);
 double		ft_fabs(double x);
-long double	ft_lfabs(long double x);
+long double	ft_fabsl(long double x);
 long double	ft_truncl(long double x);
 long double	ft_roundl(long double x);
 
