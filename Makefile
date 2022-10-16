@@ -6,7 +6,7 @@
 #    By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 15:27:40 by elehtora          #+#    #+#              #
-#    Updated: 2022/10/16 21:10:57 by elehtora         ###   ########.fr        #
+#    Updated: 2022/10/16 23:46:01 by elehtora         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -107,37 +107,47 @@ SRCS		=	ft_abs.c			\
 				ft_toupper.c		\
 				ft_trunc.c
 
-OBJS = $(SRCS:.c=.o)
+SRCDIR	:= sources
+OBJS	:= $(SRCS:.c=.o)
+SRCS	:= $(addprefix $(SRCDIR)/,$(SRCS))
+OBJDIR	:= objects
+OBJS	:= $(addprefix $(OBJDIR)/,$(OBJS))
 
 CC		:= gcc
 CFLAGS	:= -Wall -Wextra -Werror
 LIB		:= ar rcs
 IDIR	:= includes
-IPATH	:= -I$(IDIR)
+IPATH	:= -I $(IDIR)
 INCL	:= ft_string.h \
 		   libft.h
 INCL	:= $(addprefix $(IDIR)/, $(INCL))
-RM		:= /bin/rm -f
+RM		:= /bin/rm -rf
 
 # RULES
-.PHONY: all clean fclean re
+.PHONY: all build clean fclean re
 
-all : $(NAME)
+all : build
 
-$(NAME) : $(OBJS) $(INCL)
+$(NAME) : $(OBJS)
 	@echo "Linking as library \033[1;32m$(NAME)...\033[0m"
 	@$(LIB) $(NAME) $(OBJS)
 
-%.o : %.c
-	@echo "Creating object file:\t\033[1;32m$(<:.c=.o)\033[0m"
-	@$(CC) $(CFLAGS) $(IPATH) -c $<
+build : $(OBJDIR)
+	@$(MAKE) $(NAME)
+
+$(OBJDIR) :
+	@-mkdir -p $(OBJDIR)
+
+$(OBJDIR)/%.o : $(SRCDIR)/%.c
+	@echo "Creating object file:\t\033[1;32m$(notdir $(<:.c=.o))\033[0m"
+	@$(CC) $(CFLAGS) $(IPATH) -c $< -o $@
 
 clean :
-	@echo "\033[1;32mCleaning object files.\033[0m"
-	@$(RM) $(OBJS)
+	@echo "Cleaned object files of \033[1;32m$(NAME)\033[0m"
+	@@$(RM) $(OBJS) $(OBJDIR)
 
 fclean : clean
-	@echo "\033[1;32mCleaning $(NAME)...\033[0m"
+	@echo "Cleaned build executable of \033[1;32m$(NAME)\033[0m"
 	@$(RM) $(NAME)
 
 re : fclean all
