@@ -6,7 +6,7 @@
 #    By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 15:27:40 by elehtora          #+#    #+#              #
-#    Updated: 2022/10/16 20:05:27 by elehtora         ###   ########.fr        #
+#    Updated: 2022/10/16 21:10:57 by elehtora         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,9 @@
 
 NAME = libft.a
 
-SRCS		=	ft_atoi.c			\
-				ft_abs.c			\
+SRCS		=	ft_abs.c			\
+				ft_atoi.c			\
+				ft_arechars.c		\
 				ft_bzero.c			\
 				ft_basename.c		\
 				ft_del.c			\
@@ -29,8 +30,8 @@ SRCS		=	ft_atoi.c			\
 				ft_isprint.c		\
 				ft_isupper.c		\
 				ft_iswhite.c		\
-				ft_arechars.c		\
 				ft_itoa.c			\
+				ft_join_path.c		\
 				ft_ltoa.c			\
 				ft_lstadd.c			\
 				ft_lstcpyone.c		\

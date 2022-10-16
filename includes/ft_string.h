@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 19:37:25 by elehtora          #+#    #+#             */
-/*   Updated: 2022/10/16 20:23:25 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/10/16 21:08:32 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ size_t		ft_strdlen(const char *s, const char delim);
 size_t		ft_strnlen(const char *s, size_t maxlen);
 char		*ft_basename(char *path);
 char		*ft_dirname(char *path);
+char		*ft_join_path(char *dirname, char *basename);
 char		*ft_strdup(const char *s);
 char		*ft_strndup(const char *s, size_t n);
 char		*ft_strddup(const char *s, char d);
