@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:00:26 by elehtora          #+#    #+#             */
-/*   Updated: 2022/09/25 10:47:23 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/10/16 05:12:21 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ char		*ft_charappend(char *str, char append);
 size_t		ft_strlen(const char *s);
 size_t		ft_strdlen(const char *s, const char delim);
 size_t		ft_strnlen(const char *s, size_t maxlen);
+char		*ft_basename(char *path);
+char		*ft_dirname(char *path);
 char		*ft_strdup(const char *s);
 char		*ft_strndup(const char *s, size_t n);
 char		*ft_strddup(const char *s, char d);
