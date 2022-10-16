@@ -6,7 +6,7 @@
 #    By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 15:27:40 by elehtora          #+#    #+#              #
-#    Updated: 2022/10/16 05:10:32 by elehtora         ###   ########.fr        #
+#    Updated: 2022/10/16 20:05:27 by elehtora         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -108,23 +108,28 @@ SRCS		=	ft_atoi.c			\
 
 OBJS = $(SRCS:.c=.o)
 
-CC=clang
-CFLAGS = -Wall -Wextra -Werror
-LIB=ar rcs
-RM=/bin/rm -f
+CC		:= gcc
+CFLAGS	:= -Wall -Wextra -Werror
+LIB		:= ar rcs
+IDIR	:= includes
+IPATH	:= -I$(IDIR)
+INCL	:= ft_string.h \
+		   libft.h
+INCL	:= $(addprefix $(IDIR)/, $(INCL))
+RM		:= /bin/rm -f
 
 # RULES
-.PHONY: all objmessage clean fclean re
+.PHONY: all clean fclean re
 
 all : $(NAME)
 
-$(NAME) : $(OBJS)
+$(NAME) : $(OBJS) $(INCL)
 	@echo "Linking as library \033[1;32m$(NAME)...\033[0m"
 	@$(LIB) $(NAME) $(OBJS)
 
 %.o : %.c
 	@echo "Creating object file:\t\033[1;32m$(<:.c=.o)\033[0m"
-	@$(CC) $(CFLAGS) -c $<
+	@$(CC) $(CFLAGS) $(IPATH) -c $<
 
 clean :
 	@echo "\033[1;32mCleaning object files.\033[0m"

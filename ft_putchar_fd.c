@@ -6,13 +6,16 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 16:13:14 by elehtora          #+#    #+#             */
-/*   Updated: 2022/01/31 04:44:34 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/10/16 19:50:34 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include "ft_string.h"
 
-void	ft_putchar_fd(char c, int fd)
+int	ft_putchar_fd(int c, int fd)
 {
-	write(fd, &c, 1);
+	if (write(fd, &c, 1) == -1)
+		return (EOF);
+	return (c);
 }
