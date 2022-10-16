@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 19:37:25 by elehtora          #+#    #+#             */
-/*   Updated: 2022/10/16 21:08:32 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/10/16 23:00:05 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 // For EOF definition
 # include <stdio.h>
+// Integer macros
+# include <stdint.h>
 
 char		*ft_strnew(size_t size);
 void		ft_strdel(char **as);
@@ -53,9 +55,12 @@ char		*ft_charappend(char *str, char append);
 size_t		ft_strlen(const char *s);
 size_t		ft_strdlen(const char *s, const char delim);
 size_t		ft_strnlen(const char *s, size_t maxlen);
-char		*ft_basename(char *path);
-char		*ft_dirname(char *path);
+char		*ft_basename(const char *path);
+char		*ft_dirname(const char *path);
 char		*ft_join_path(char *dirname, char *basename);
+char		*ft_strip(const char *str, const char *charset);
+char		*ft_lstrip(const char *str, const char *charset);
+char		*ft_rstrip(const char *str, const char *charset);
 char		*ft_strdup(const char *s);
 char		*ft_strndup(const char *s, size_t n);
 char		*ft_strddup(const char *s, char d);

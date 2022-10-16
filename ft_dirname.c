@@ -6,13 +6,13 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 03:19:04 by elehtora          #+#    #+#             */
-/*   Updated: 2022/10/16 06:35:43 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/10/16 22:56:32 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_dirname(char *path)
+char	*ft_dirname(const char *path)
 {
 	char	*end;
 

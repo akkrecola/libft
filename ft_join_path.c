@@ -6,9 +6,12 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 21:02:34 by elehtora          #+#    #+#             */
-/*   Updated: 2022/10/16 21:08:37 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/10/16 23:04:40 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
+#include "ft_string.h"
 
 /* Joins path elements 'dirname' (path to parent) and 'basename' (path to file)
  * and returns a heap allocated pathname. If either argument is NULL or an empty
@@ -21,19 +24,15 @@
  */
 char	*ft_join_path(char *dirname, char *basename)
 {
-	char	*path;
-
 	if (!dirname && !basename)
 		return (NULL);
 	if (!dirname || ft_strequ(dirname, ""))
 		return (ft_strdup(basename));
 	if (!basename || ft_strequ(basename, ""))
 		return (ft_strdup(dirname));
-	if (ft_strchr(dirname, '\0') - 1 == '/')
-	{
-		// Clean trailing / with dirname = ft_rstrip(dirname, "/");
-		// Guard
-	}
+	dirname = ft_rstrip(dirname, "/"); // Clean trailing / with
+	if (!dirname)
+		return (NULL);// Guard
 	return (ft_strdjoin(dirname, "/", basename));
 }
 
