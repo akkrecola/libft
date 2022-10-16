@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:00:26 by elehtora          #+#    #+#             */
-/*   Updated: 2022/10/16 20:04:34 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/10/17 00:02:59 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ double		ft_pow(double base, double exp);
 long double	ft_powl(long double base, long double exp);
 float		ft_powf(float base, float exp);
 int			ft_powi(int base, int exp);
+uint64_t	ft_exp10(int exp);
 int			ft_abs(int x);
 long		ft_labs(long x);
 long long	ft_llabs(long long x);
