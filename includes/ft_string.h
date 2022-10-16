@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 19:37:25 by elehtora          #+#    #+#             */
-/*   Updated: 2022/10/16 23:00:05 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/10/16 23:11:29 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ char		*ft_freejoin(const char *a, const char *b, uint8_t select);
 char		*ft_strtrim(char const *s);
 char		**ft_strsplit(char const *s, char c);
 size_t		ft_strspn(const char *s, const char *charset);
+size_t		ft_strcspn(const char *s, const char *charset);
 char		*ft_itoa(int n);
 char		*ft_ltoa_unsigned(unsigned long long n);
 char		*ft_ltoa(long long n);
