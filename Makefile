@@ -6,7 +6,7 @@
 #    By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 15:27:40 by elehtora          #+#    #+#              #
-#    Updated: 2022/10/16 23:46:01 by elehtora         ###   ########.fr        #
+#    Updated: 2022/10/17 03:17:24 by elehtora         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,13 +15,15 @@
 NAME = libft.a
 
 SRCS		=	ft_abs.c			\
-				ft_atoi.c			\
 				ft_arechars.c		\
-				ft_bzero.c			\
+				ft_atoi.c			\
 				ft_basename.c		\
+				ft_bzero.c			\
+				ft_charappend.c		\
+				ft_count_digs.c		\
 				ft_del.c			\
 				ft_dirname.c		\
-				ft_count_digs.c		\
+				ft_freejoin.c		\
 				ft_isalnum.c		\
 				ft_isalpha.c		\
 				ft_isascii.c		\
@@ -32,7 +34,6 @@ SRCS		=	ft_abs.c			\
 				ft_iswhite.c		\
 				ft_itoa.c			\
 				ft_join_path.c		\
-				ft_ltoa.c			\
 				ft_lstadd.c			\
 				ft_lstcpyone.c		\
 				ft_lstdel.c			\
@@ -40,6 +41,7 @@ SRCS		=	ft_abs.c			\
 				ft_lstiter.c		\
 				ft_lstmap.c			\
 				ft_lstnew.c			\
+				ft_ltoa.c			\
 				ft_memalloc.c		\
 				ft_memccpy.c		\
 				ft_memchr.c			\
@@ -49,6 +51,9 @@ SRCS		=	ft_abs.c			\
 				ft_memmove.c		\
 				ft_memrchr.c		\
 				ft_memset.c			\
+				ft_nat_sqrt.c		\
+				ft_pow.c			\
+				ft_putbits.c		\
 				ft_putchar.c		\
 				ft_putchar_fd.c		\
 				ft_putendl.c		\
@@ -58,51 +63,47 @@ SRCS		=	ft_abs.c			\
 				ft_putnbr_fd.c		\
 				ft_putstr.c			\
 				ft_putstr_fd.c		\
-				ft_putbits.c		\
-				ft_pow.c			\
-				ft_charappend.c		\
 				ft_round.c			\
 				ft_strcat.c			\
 				ft_strchr.c			\
 				ft_strclr.c			\
-				ft_strrclr.c		\
-				ft_strrev.c			\
 				ft_strcmp.c			\
 				ft_strcpy.c			\
 				ft_strdcpy.c		\
-				ft_strdel.c			\
-				ft_strdup.c			\
-				ft_strndup.c		\
 				ft_strddup.c		\
+				ft_strdel.c			\
+				ft_strdjoin.c		\
+				ft_strdlen.c		\
+				ft_strdup.c			\
 				ft_strequ.c			\
 				ft_strgetset.c		\
 				ft_striter.c		\
 				ft_striteri.c		\
 				ft_strjoin.c		\
-				ft_strdjoin.c		\
+				ft_strlcat.c		\
+				ft_strlcpy.c		\
 				ft_strlen.c			\
-				ft_strdlen.c		\
 				ft_strmap.c			\
 				ft_strmapi.c		\
 				ft_strmodify.c		\
 				ft_strncat.c		\
 				ft_strncmp.c		\
 				ft_strncpy.c		\
-				ft_strlcat.c		\
-				ft_strlcpy.c		\
+				ft_strndup.c		\
 				ft_strnequ.c		\
 				ft_strnew.c			\
 				ft_strnlen.c		\
 				ft_strnstr.c		\
 				ft_strpbrk.c		\
 				ft_strrchr.c		\
+				ft_strrclr.c		\
+				ft_strrev.c			\
 				ft_strsep.c			\
 				ft_strsplit.c		\
 				ft_strspn.c			\
 				ft_strstr.c			\
 				ft_strsub.c			\
 				ft_strtrim.c		\
-				ft_nat_sqrt.c		\
 				ft_tolower.c		\
 				ft_toupper.c		\
 				ft_trunc.c

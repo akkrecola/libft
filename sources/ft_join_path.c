@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 21:02:34 by elehtora          #+#    #+#             */
-/*   Updated: 2022/10/16 23:04:40 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/10/17 01:55:30 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,8 @@ char	*ft_join_path(char *dirname, char *basename)
 		return (ft_strdup(basename));
 	if (!basename || ft_strequ(basename, ""))
 		return (ft_strdup(dirname));
-	dirname = ft_rstrip(dirname, "/"); // Clean trailing / with
+	dirname = ft_rstrip(dirname, "/");
 	if (!dirname)
-		return (NULL);// Guard
+		return (NULL);
 	return (ft_strdjoin(dirname, "/", basename));
 }
-
