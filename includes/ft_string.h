@@ -6,7 +6,7 @@
 /*   By: elehtora <elehtora@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 19:37:25 by elehtora          #+#    #+#             */
-/*   Updated: 2022/10/17 03:17:40 by elehtora         ###   ########.fr       */
+/*   Updated: 2022/11/10 13:55:31 by elehtora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int			ft_putendl_fd(char const *s, int fd);
 int			ft_putnbr_fd(int n, int fd);
 int			ft_putbits(void *var, unsigned int bytes);
 int			ft_putmem(char *s, size_t n);
-char		*ft_strsep(char **p_string, int c);
+char		*ft_strsep(char **stringp, const char *delim);
 char		*ft_charappend(char *str, char append);
 size_t		ft_strlen(const char *s);
 size_t		ft_strdlen(const char *s, const char delim);
